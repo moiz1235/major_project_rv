@@ -1,0 +1,80 @@
+\# Program start time UTC 2015.09.27 07:23:08.628
+\# Local time Sunday 27 September 2015, 12:23 am
+\o Program:		@(#)$CDS: virtuoso version 6.1.6-64b 05/03/2013 14:44 (sjfnl178) $
+\o Hierarchy:		/opt/cadence/virtuoso/tools.lnx86/dfII/
+\o Sub version:		sub-version  IC6.1.6-64b.101  (64-bit addresses)
+\# Host name (type):	heartprob (x86_64)
+\# Operating system:	Linux 2.6.32-504.3.3.el6.x86_64 #1 SMP Wed Dec 17 01:55:02 UTC 2014
+\# Linux /etc/issue:	Red Hat Enterprise Linux Server release 6.4 (Santiago)
+\# Linux /etc/issue:	Kernel \r on an \m
+\# X display name (WxH):	heartprob:80 (1024x868)
+\# Available geometry:			TL(0:0) BR(1023:867)
+\# X server:			RealVNC Ltd (VNC nograph server)
+\# Depth of Visual (Root):	16 (16)
+\# Number of Planes Used:	16
+\# X version:		11.0 (vendor release 3370)
+\# X resource pool:	base 0x800000, mask 0x3fffff (4194303), shift 0
+\# 			current id 0x0, current max 0x3ffffa (4194298)
+\# Max data seg size:	     unlimited
+\# Max process size:	     unlimited
+\# Initial sbrk value:	        313 MB
+\# Available memory:	      6,986 MB
+\# System memory:	      8,108 MB
+\# Maximum memory size:	      7,852 MB
+\# Max mem available:	      7,043 MB
+\# Initial memory used:	         57 MB
+\#        process size:	        686 MB
+\# Qt version:		4.7.2
+\# Window Manager:	other
+\# User Name:		heart
+\o Working Directory:	heartprob:/home/heart/work
+\# Process Id:		5076
+\o 
+\o COPYRIGHT © 1992-2013  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
+\o           © 1992-2013  UNIX SYSTEMS Laboratories INC.,
+\o                          Reproduced with permission.
+\o 
+\o This Cadence Design Systems program and online documentation are
+\o proprietary/confidential information and may be disclosed/used only
+\o as authorized in a license agreement controlling such use and disclosure.
+\o 
+\o           RESTRICTED RIGHTS NOTICE (SHORT FORM)
+\o Use/reproduction/disclosure is subject to restriction
+\o set forth at FAR 1252.227-19 or its equivalent.
+\# Available memory:          6,961 MB at UTC 2015.09.27 07:23:09.089
+\# Memory report: Maximum memory size now 7,049 MB at UTC 2015.09.27 07:23:09.089
+\o Loading geView.cxt 
+\o Loading menuBuilder.cxt 
+\o Loading schView.cxt 
+\o Loading selectSv.cxt 
+\o Loading LVS.cxt 
+\o Loading layerProc.cxt 
+\o Loading pte2.cxt 
+\o Loading xlUI.cxt 
+\o Loading auCore.cxt 
+\o Loading dcm.cxt 
+\o Loading vhdl.cxt 
+\o Loading seismic.cxt 
+\o Loading ci.cxt 
+\o Loading ams.cxt 
+\o Loading oasis.cxt 
+\o Loading analog.cxt 
+\o Loading asimenv.cxt 
+\o Loading par.cxt 
+\o Loading socket.cxt 
+\o Loading alvs.cxt 
+\o Loading awv.cxt 
+\o Loading adexl.cxt 
+\o *Info*    Exporting services from client ... 
+\o 
+\e *Error* strcat: argument #1 should be either a string or a symbol (type template = "S") - nil
+\# Memory report: using         157 MB, process size 912 MB at UTC 2015.09.27 07:23:11.519
+\o *Info*    Client has finished starting ... 
+\o 
+\p > 
+\o Job 0 timed out after no activity in 300 seconds.
+\o Loading viva.cxt 
+\o 
+\o *Info*    Received signal SIGTERM.
+\o 
+\o 

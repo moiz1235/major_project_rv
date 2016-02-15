@@ -1,0 +1,431 @@
+\# Program start time UTC 2015.10.01 06:06:08.367
+\# Local time Wednesday 30 September 2015, 11:06 pm
+\o Program:		@(#)$CDS: virtuoso version 6.1.6-64b 05/03/2013 14:44 (sjfnl178) $
+\o Hierarchy:		/opt/cadence/virtuoso/tools.lnx86/dfII/
+\o Sub version:		sub-version  IC6.1.6-64b.101  (64-bit addresses)
+\# Host name (type):	heartprob (x86_64)
+\# Operating system:	Linux 2.6.32-504.3.3.el6.x86_64 #1 SMP Wed Dec 17 01:55:02 UTC 2014
+\# Linux /etc/issue:	Red Hat Enterprise Linux Server release 6.4 (Santiago)
+\# Linux /etc/issue:	Kernel \r on an \m
+\# X display name (WxH):	heartprob:80 (1024x868)
+\# Available geometry:			TL(0:0) BR(1023:867)
+\# X server:			RealVNC Ltd (VNC nograph server)
+\# Depth of Visual (Root):	16 (16)
+\# Number of Planes Used:	16
+\# X version:		11.0 (vendor release 3370)
+\# X resource pool:	base 0x800000, mask 0x3fffff (4194303), shift 0
+\# 			current id 0x0, current max 0x3ffffa (4194298)
+\# Max data seg size:	     unlimited
+\# Max process size:	     unlimited
+\# Initial sbrk value:	        316 MB
+\# Available memory:	      7,049 MB
+\# System memory:	      8,108 MB
+\# Maximum memory size:	      7,849 MB
+\# Max mem available:	      7,106 MB
+\# Initial memory used:	         57 MB
+\#        process size:	        686 MB
+\# Qt version:		4.7.2
+\# Window Manager:	other
+\# User Name:		heart
+\o Working Directory:	heartprob:/home/heart/work
+\# Process Id:		3804
+\o 
+\o COPYRIGHT © 1992-2013  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
+\o           © 1992-2013  UNIX SYSTEMS Laboratories INC.,
+\o                          Reproduced with permission.
+\o 
+\o This Cadence Design Systems program and online documentation are
+\o proprietary/confidential information and may be disclosed/used only
+\o as authorized in a license agreement controlling such use and disclosure.
+\o 
+\o           RESTRICTED RIGHTS NOTICE (SHORT FORM)
+\o Use/reproduction/disclosure is subject to restriction
+\o set forth at FAR 1252.227-19 or its equivalent.
+\# Available memory:          7,028 MB at UTC 2015.10.01 06:06:08.769
+\# Memory report: Maximum memory size now 7,116 MB at UTC 2015.10.01 06:06:08.769
+\o Loading geView.cxt 
+\o Loading menuBuilder.cxt 
+\o Loading schView.cxt 
+\o Loading selectSv.cxt 
+\o Loading LVS.cxt 
+\o Loading layerProc.cxt 
+\o Loading pte2.cxt 
+\o Loading xlUI.cxt 
+\o Loading auCore.cxt 
+\o Loading dcm.cxt 
+\o Loading vhdl.cxt 
+\o Loading seismic.cxt 
+\o Loading ci.cxt 
+\o Loading ams.cxt 
+\o Loading oasis.cxt 
+\o Loading analog.cxt 
+\o Loading asimenv.cxt 
+\o Loading par.cxt 
+\o Loading socket.cxt 
+\o Loading alvs.cxt 
+\o Loading awv.cxt 
+\o Loading adexl.cxt 
+\o *Info*    Exporting services from client ... 
+\o 
+\e *Error* strcat: argument #1 should be either a string or a symbol (type template = "S") - nil
+\# Memory report: using         157 MB, process size 912 MB at UTC 2015.10.01 06:06:10.904
+\o *Info*    Client has finished starting ... 
+\o 
+\p > 
+\o 
+\o 
+\o *Info*    Configuring the session ...
+\o 
+\o 	Library      = ALU
+\o 	Cell         = inv_test
+\o 	View         = schematic
+\o 	Simulator    = spectre
+\o 	State Path   = $AXL_SETUPDB_DIR/test_states
+\o 	State Name   = ALU:inv_test:1_none_MonteCarlo.0
+\o 	Results DB   = /home/heart/work/ALU/inv_test/adexl/results/data/MonteCarlo.0.rdb
+\o 	Results Dir  = /home/heart/simulation/ALU/inv_test/adexl/results/data/MonteCarlo.0/1/ALU:inv_test:1
+\o 	Results Loc  = /home/heart/simulation/ALU/inv_test/adexl/results/data
+\o 	Project Dir  = /home/heart/simulation
+\o 	Setup DB loc = /home/heart/work/ALU/inv_test/adexl
+\o 	File Encoding = 0
+\o 
+\o 
+\o Loading simui.cxt 
+\o Loading viva.cxt 
+\o *Info*    Spectre controlMode is set "batch".
+\o 
+\o Loading spectrei.cxt 
+\o Loading relXpert.cxt 
+\o Loading gpdk045/libInit.il ...
+\o 	Loading gpdk045/loadCxt.ile ... done!
+\o 	Loading context 'gpdk045' from library 'gpdk045' ... done!
+\o 	Loading context 'pdkUtils' from library 'gpdk045' ... done!
+\o 	Loading gpdk045/display.drf ... done!
+\e 	Loading gpdk045/gpdk045_customFilter.il ... *Error* eval: unbound variable - axlRegisterCustomDeviceFilter
+\o failed!
+\o 	Loading gpdk045/libInitCustomExit.il ... 
+\o 	Loading Environment Settings ...
+\o 	Loading Model Management File ...
+\o Loading hspiceD.cxt 
+\o Loading spectreinl.cxt 
+\o Loading UltraSim.cxt 
+\o Loading msgHandler.cxt 
+\o Loading AMSOSS.cxt 
+\o Loading AMS.cxt 
+\o 
+\o   *************************************************************           
+\o   *              Cadence Design Systems, Inc.                 *           
+\o   *                                                           *           
+\o   *                    Generic 45nm PDK                       *           
+\o   *                        (gpdk045)                          *           
+\o   *                                                           *           
+\o   *************************************************************           
+\o 	
+\o 
+\o 	VERSION: 2.0
+\o 
+\o done!
+\o Failed to load gpdk045/libInit.il successfully!WARNING (ADE-5033): Cannot find the environment variable 'sweeptype' for tool 'ams.hbsp'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5034): Unable to access the default environment variables in the simulator's
+\o         global .cdsenv file ('<your_install_dir>/tools/dfII/etc/tools/ams/.cdsenv')
+\o         because the file is missing or out-of-date. Till this problem exists, internal
+\o         default values will be used for these environment variables during this session.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.hbsp'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'noisetypeUI' for tool 'ams.hbnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'MultiEna' for tool 'ams.hbnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.hbnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sbsm' for tool 'ams.hbnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'inType' for tool 'ams.hbnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'refsbSelect' for tool 'ams.hbnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'outType' for tool 'ams.hbnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'donoise' for tool 'ams.hbnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'special' for tool 'ams.hbac'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.hbac'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sbsm' for tool 'ams.hbac'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'tones' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'oscana' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'HBTonesNum' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'harmonicsCyc' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'harmonics' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sigpartB' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'hbhomotopy' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweepB' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep2' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep3' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'loadpullB' for tool 'ams.hb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweeptype' for tool 'ams.qpsp'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.qpsp'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.qpxf'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sbsm' for tool 'ams.qpxf'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'outType' for tool 'ams.qpxf'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'MultiEna' for tool 'ams.qpnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.qpnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sbsm' for tool 'ams.qpnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'inType' for tool 'ams.qpnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'refsbSelect' for tool 'ams.qpnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'outType' for tool 'ams.qpnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.qpac'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sbsm' for tool 'ams.qpac'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweeptype' for tool 'ams.psp'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.psp'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'special' for tool 'ams.pxf'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'outType' for tool 'ams.pxf'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.pxf'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'harmonics' for tool 'ams.pxf'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'noisetypeUI' for tool 'ams.pnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'MultiEna' for tool 'ams.pnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.pnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'harmonics' for tool 'ams.pnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'pnoisemethod' for tool 'ams.pnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'inType' for tool 'ams.pnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'refsbSelect' for tool 'ams.pnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'outType' for tool 'ams.pnoise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.pstb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'special' for tool 'ams.pac'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.pac'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'harmonics' for tool 'ams.pac'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'engine' for tool 'ams.pss'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'harmonics' for tool 'ams.pss'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'hbhomotopy' for tool 'ams.pss'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'oscana' for tool 'ams.pss'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweepB' for tool 'ams.pss'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep' for tool 'ams.pss'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep2' for tool 'ams.pss'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep3' for tool 'ams.pss'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'loadpullB' for tool 'ams.pss'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep' for tool 'ams.sp'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.sp'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'donoise' for tool 'ams.sp'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep' for tool 'ams.xf'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.xf'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'outType' for tool 'ams.xf'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep' for tool 'ams.noise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.noise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'outType' for tool 'ams.noise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'inType' for tool 'ams.noise'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep' for tool 'ams.dc'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep' for tool 'ams.stb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'rangeType' for tool 'ams.stb'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'outType' for tool 'ams.dcmatch'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep' for tool 'ams.dcmatch'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'outType' for tool 'ams.pz'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'inType' for tool 'ams.pz'.
+\o         Its internal default value will be used.
+\o WARNING (ADE-5033): Cannot find the environment variable 'sweep' for tool 'ams.pz'.
+\o         Its internal default value will be used.
+\o Loading devCheck.cxt 
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Run start for Point ID (0 1) on testbench [ ALU:inv_test:1
+\o           ].
+\o 
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Loading monte.cxt 
+\o Setting temp(T) = 27
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/heart/simulation/ALU/inv_test/adexl/results/data/MonteCarlo.0/1/ALU:inv_test:1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/heart/simulation/ALU/inv_test/adexl/results/data/MonteCarlo.0/1/ALU:inv_test:1
+\o 
+\o 
+\o *Info*    Creating Netlist for Point ID (0 1)
+\o 
+\o generate netlist...
+\o Loading seCore.cxt 
+\o Initializing the control file using cp:
+\o     cp /opt/cadence/virtuoso/tools.lnx86/dfII/etc/si/control.spectre /home/heart/simulation/ALU/inv_test/adexl/results/data/MonteCarlo.0/1/ALU:inv_test:1/netlist/control
+\o Copying Spectre source file 'spectre.inp'
+\o Copying Spectre command file 'spectre.sim'
+\o Begin Incremental Netlisting Sep 30 23:06:15 2015
+\o End netlisting Sep 30 23:06:15 2015
+\o 
+\o Netlisting Statistics:
+\o 	Number of components:    6
+\o 
+\o 	Elapsed time:          1.0s (6.00/s)
+\o Errors: 0	Warnings: 0
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o Loading elec.cxt 
+\o 
+\o *Info*    Running simulation on testbench [ ALU:inv_test:1 ] for
+\o           Point ID (0 1).
+\o 
+\o *Info*    Spectre controlMode is set "batch" due to monte carlo run.
+\o 
+\o Delete psf data in /home/heart/simulation/ALU/inv_test/adexl/results/data/MonteCarlo.0/1/ALU:inv_test:1/psf.
+\o generate netlist...
+\o Begin Incremental Netlisting Sep 30 23:06:15 2015
+\o End netlisting Sep 30 23:06:15 2015
+\o 
+\o 	The netlist is up to date.
+\o 	Time taken to compare the design with netlist:   0.0s
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o start simulator if needed...
+\o       ...successful.
+\o simulate...
+\o To view the simulator output, right-click on the test name, result 
+\o name, or any value in the "Results" tab of the Outputs section and 
+\o choose "Output Log" menu option.
+\o Loading paraplot.cxt 
+\o Loading stats.cxt 
+\# Memory report: using         276 MB, process size 1,038 MB at UTC 2015.10.01 06:06:46.235
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 1) on testbench [
+\o           ALU:inv_test:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 2) on testbench [
+\o           ALU:inv_test:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 3) on testbench [
+\o           ALU:inv_test:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 4) on testbench [
+\o           ALU:inv_test:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 5) on testbench [
+\o           ALU:inv_test:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o *Info*    Client has finished evaluating ... 
+\o 
+\o 
+\o *Info*    Run complete for Point ID (0 6) on testbench [
+\o           ALU:inv_test:1 ].
+\o 
+\o 
+\o 
+\o 
+\o 
+\o INFO (ADE-3072): Simulation is stopped by user. Simulation results may not be complete.
+\o 
+\o *Info*    Received signal SIGINT.
+\o 
+\o 

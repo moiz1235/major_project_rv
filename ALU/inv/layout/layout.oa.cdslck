@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      heart
+HostName                       heartprob
+ProcessIdentifier              4926
+ProcessCreationTime_UTC        1447761782
+ProcessCreationTime_Readable   Tue Nov 17 04:03:02 2015 PST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/heart/work/ALU/inv/layout/layout.oa.cdslck
+TimeEditLocked                 Tue Nov 17 04:10:09 2015 PST

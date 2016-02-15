@@ -1,0 +1,7 @@
+
+
+
+
+
+
+load( strcat( getShellEnvVar("CALIBRE_HOME") "/lib/calibre.skl" ))
