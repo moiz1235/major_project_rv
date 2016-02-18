@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      heart
+HostName                       heartprob
+ProcessIdentifier              3236
+ProcessCreationTime_UTC        1455526435
+ProcessCreationTime_Readable   Mon Feb 15 00:53:55 2016 PST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/heart/work/for_project/kogge_stone_parallel_adder/schematic/sch.oa.cdslck.dirlck
+TimeEditLocked                 Mon Feb 15 02:44:25 2016 PST
