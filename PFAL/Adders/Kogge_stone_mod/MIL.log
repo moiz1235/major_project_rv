@@ -1,0 +1,11 @@
+pnlAddPane();
+nil
+1
+designOpen("F:\\MAJOR_PROJECT\\Codes\\GNRFET\\Adiabatic_logic\\PFAL\\Adders\\Kogge_stone_mod\\init.tr0");
+"D0"
+t
+quit();
+exit
+pnlDeletePane(1, 1);
+nil
+nil

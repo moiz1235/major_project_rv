@@ -1,0 +1,12 @@
+* "simulator" "HSPICE" 
+* "version" "Z-2007.03       "
+* "format" "HSP"
+* "rundate" "01:33:02 02/10/2016 "
+* "netlist" "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\alu\alu_kogge_con\init.sp "
+* "runtitle" " init                                                            "
+* time =    0.            
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset

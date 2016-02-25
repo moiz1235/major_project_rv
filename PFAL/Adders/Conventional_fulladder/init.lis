@@ -1,0 +1,278 @@
+ ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:07:59 02/10/2016 pcnt       
+  Copyright (C) 2007 Synopsys, Inc. All Rights Reserved.                       
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the 
+  terms and conditions of the license agreement found in:
+    C:\synopsys\Hspice_Z-2007.03\license.txt
+  Use of this program is your acceptance to be bound by this 
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: f:\major_project\codes\gnrfet\adiabatic_logic\pfal\adders\conventi
+  lic:  
+  lic: FLEXlm: v8.4b 
+  lic: USER:   MAHADIKAR M          HOSTNAME: Megaraj 
+  lic: HOSTID: "4ae3477af0ef 1ae3477af0ef 28e3477af0ef a01d4811dd4f 080027004899
+ "
+  lic: Using FLEXlm license file: 
+  lic: c:\synopsys\hspice_2007-09.lic 
+  lic: Checkout 1 hspice;  Encryption code: AD47C1C891DA5D596A45 
+  lic: License/Maintenance for hspice will expire on 31-dec-2020/2007.9 
+  lic: NODE LOCKED license on hostid "4ae3477af0ef 1ae3477af0ef 28e3477af0ef a01
+ d
+  lic:   
+ Init: read install configuration file: C:\synopsys\Hspice_Z-2007.03\meta.cfg
+  Init: hspice initialization file: C:\synopsys\Hspice_Z-2007.03\hspice.ini     
+                                                  
+
+ .options post
+ .options autostop
+ .options autostop
+ .options ingold=2     dcon=1
+ .options ingold=2     dcon=1
+ .options gshunt=1e-12 rmin=1e-15 
+ .options gshunt=1e-12 rmin=1e-15 
+ .options abstol=1e-5  absvdc=1e-4 
+ .options abstol=1e-5  absvdc=1e-4 
+ .options reltol=1e-2  relvdc=1e-2 
+ .options reltol=1e-2  relvdc=1e-2 
+ .options numdgt=4     pivot=1
+ .options numdgt=4     pivot=1
+ *.options trcon=0
+ *.options trcon=0
+
+ *library file*
+ .lib 'gnrfet.lib' gnrfet
+
+
+ *vdd vdd gnd dc .5
+ .endl gnrfet
+
+
+ *vdd vdd gnd dc .5
+ .param   temp=27
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\adders\conventional_fulladder\full_adder.sp"
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\adders\conventional_fulladder\full_adder.sp"
+
+ .global gnd vdd
+ full_adder
+
+  **warning** (F:\MAJOR_PROJECT\Codes\GNRFET\Adiabatic_logic\PFAL\Adders\Conventional_fulladder\full_adder.sp:1) 
+ *******************full adder******************
+ .subckt full_adder a ab b bb c cb clk s sb cout coutb
+
+ xm1p s sb clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm1p s sb clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p sb s clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p sb s clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb1n s sb gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb1n s sb gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb2n sb s gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb2n sb s gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ *********sum n tree********
+ xm1n clk cb vns1 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n clk c vns2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n clk c vns2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm3n vns1 b vns3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm3n vns1 b vns3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n vns1 bb vns4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n vns1 bb vns4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n vns2 bb vns3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n vns2 bb vns3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n vns2 b vns4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n vns2 b vns4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n vns3 a sb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n vns3 a sb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n vns4 ab sb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n vns4 ab sb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ *********sum nb tree********
+ xm9n clk c vns9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n clk cb vns10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n clk cb vns10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm11n vns9 bb vns11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm11n vns9 bb vns11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm12n vns9 b vns12 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm12n vns9 b vns12 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm13n vns10 b vns11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm13n vns10 b vns11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm14n vns10 bb vns12 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm14n vns10 bb vns12 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm15n vns11 ab s gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm15n vns11 ab s gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm16n vns12 a s gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm16n vns12 a s gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+
+ xm3p cout coutb clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4p coutb cout clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4p coutb cout clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb3n cout coutb gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb3n cout coutb gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb4n coutb cout gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb4n coutb cout gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ *********carry n tree********
+ *********carry n tree********
+ xm17n clk cb vns17 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm18n clk ab vns18 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm18n clk ab vns18 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm19n vns17 ab coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm19n vns17 ab coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm20n vns17 bb coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm20n vns17 bb coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm21n vns18 bb coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm21n vns18 bb coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ *********sum nb tree********
+ xm22n clk c vns22 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm23n clk a vns23 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm23n clk a vns23 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm24n vns22 a cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm24n vns22 a cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm25n vns22 b cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm25n vns22 b cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm26n vns23 b cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm26n vns23 b cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ .ends full_adder
+
+ end
+
+ end
+  **warning** (F:\MAJOR_PROJECT\Codes\GNRFET\Adiabatic_logic\PFAL\Adders\Conventional_fulladder\full_adder.sp:52) 
+
+ .global gnd vdd
+
+
+
+
+ va va gnd pat (.5 0 0 0.1n 0.1n 3n b101000 r=5) 
+ vab vab gnd pat (.5 0 0 0.1n 0.1n 3n b000010 r=5)
+ vab vab gnd pat (.5 0 0 0.1n 0.1n 3n b000010 r=5)
+ vb vb gnd pat (.5 0 0 0.1n 0.1n 3n b100010 r=5) 
+ vb vb gnd pat (.5 0 0 0.1n 0.1n 3n b100010 r=5) 
+ vbb vbb gnd pat (.5 0 0 0.1n 0.1n 3n b001000 r=5) 
+ vbb vbb gnd pat (.5 0 0 0.1n 0.1n 3n b001000 r=5) 
+ vc vc gnd pat (.5 0 0 0.1n 0.1n 3n b001000 r=5) 
+ vc vc gnd pat (.5 0 0 0.1n 0.1n 3n b001000 r=5) 
+ vcb vcb gnd pat (.5 0 0 0.1n 0.1n 3n b100010 r=5)
+ vcb vcb gnd pat (.5 0 0 0.1n 0.1n 3n b100010 r=5)
+ v2 v2 gnd pulse 0 .5 1n 1n 1n 2n 6.0n
+ v2 v2 gnd pulse 0 .5 1n 1n 1n 2n 6.0n
+
+ xadder va vab vb vbb vc vcb v2 s sb c cb full_adder
+
+
+ * transient analysis *
+
+
+ * transient analysis *
+ .op
+ .tran 1n 25n
+ .tran 1n 25n
+ *.print power
+ *.print power
+
+ ************total power calculation(op =high)*****************
+ .meas tran itotal avg i(v2) from=1ns to=25ns
+ .meas tran vtotal avg v(v2) from=1ns to=25ns
+ .meas tran vtotal avg v(v2) from=1ns to=25ns
+ .meas etotal param='-vtotal*itotal'
+ .meas etotal param='-vtotal*itotal'
+ .meas tran average_power avg p(v2) from 1ns to 25ns
+ .meas tran average_power avg p(v2) from 1ns to 25ns
+ ************************************************** ********
+ ************************************************** ********
+ .end 
+
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:07:59 02/10/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  circuit name directory                                               
+ ******  
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xadder.                         full_adder         1.00 
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:v2                  new dc=  0.0000D+00
+
+  Opening plot unit= 79
+ file=f:\major_project\codes\gnrfet\adiabatic_logic\pfal\adders\conventional_fu
+
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:07:59 02/10/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  operating point information      tnom=  25.000 temp=  25.000         
+ ******  
+ ***** operating point status is all       simulation time is     0.     
+     node    =voltage       node    =voltage       node    =voltage
+
+ + 0:c       =-1.814e-08  0:cb      = 1.432e-10  0:s       =-8.927e-05
+ + 0:sb      =-1.631e-08  0:v2      =   0.       0:va      = 5.000e-01
+ + 0:vab     =   0.       0:vb      = 5.000e-01  0:vbb     =   0.     
+ + 0:vc      =   0.       0:vcb     = 5.000e-01  1:vns1    =-9.965e-09
+ + 1:vns10   =-7.235e-09  1:vns11   =-9.644e-09  1:vns12   =-8.927e-05
+ + 1:vns17   = 2.091e-14  1:vns18   = 3.878e-10  1:vns2    =-6.713e-05
+ + 1:vns22   =-2.176e-08  1:vns23   =-1.088e-08  1:vns3    =-1.540e-08
+ + 1:vns4    =-6.713e-05  1:vns9    =-8.927e-05
+
+
+ ****  voltage sources
+
+ subckt                                                              
+ element   0:va        0:vab       0:vb        0:vbb       0:vc      
+  volts     5.000e-01     0.        5.000e-01     0.          0.     
+  current  -5.000e-13     0.       -5.000e-13     0.          0.     
+  power     2.500e-13     0.        2.500e-13     0.          0.     
+
+ subckt                          
+ element   0:vcb       0:v2      
+  volts     5.000e-01     0.     
+  current  -5.000e-13  -1.442e-11
+  power     2.500e-13     0.     
+
+     total voltage source power dissipation=  7.500e-13       watts
+
+
+ ******  
+  init                                                                         
+  ******  transient analysis               tnom=  25.000 temp=  25.000         
+ ******  
+   itotal= -2.7683E-09  from=  1.0000E-09     to=  2.5000E-08
+   vtotal=  2.5000E-01  from=  1.0000E-09     to=  2.5000E-08
+   etotal=  6.9207E-10
+   average_power= -5.0818E-09  from=  1.0000E-09     to=  2.5000E-08
+
+          ***** job concluded
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:07:59 02/10/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  job statistics summary           tnom=  25.000 temp=  25.000         
+ ******  
+
+           total memory used       2121 kbytes
+
+  # nodes =     240 # elements=     579
+  # diodes=       0 # bjts    =       0 # jfets   =       0 # mosfets =       0
+  # va device =       0
+
+    analysis           time    # points   tot. iter  conv.iter
+
+    op point           0.77           1          14
+    transient         44.66          26         968         221 rev=        27
+    readin             0.10
+    errchk             0.57
+    setup              0.04
+    output             0.00
+           total cpu time         46.20 seconds
+               job started at  13:07:59 02/10/2016
+               job ended   at  13:08:45 02/10/2016
+
+
+  Init: hspice initialization file: C:\synopsys\Hspice_Z-2007.03\hspice.ini     
+                                                  
+  lic: Release hspice token(s) 

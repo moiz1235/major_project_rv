@@ -1,0 +1,12 @@
+$DATA1 SOURCE='HSPICE' VERSION='Z-2007.03       '
+.TITLE ' init'
+ itotal1          vtotal1          etotal1          p_avg1            
+ itotal2          vtotal2          etotal2          p_avg2            
+ itotal3          vtotal3          etotal3          p_avg3            
+ itotal4          vtotal4          etotal4          p_avg4            
+ etotal           temper           alter#            
+ -4.650e-08          0.2500        -1.162e-08       -3.229e-08        
+ -4.323e-08          0.2500        -1.081e-08       -2.303e-08        
+ -3.738e-08          0.2500        -9.344e-09       -2.203e-08        
+ -3.774e-08          0.2500        -9.435e-09       -1.911e-08        
+ -4.121e-08         25.0000           1.0000         
