@@ -1,0 +1,244 @@
+ ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:58:22 02/02/2016 pcnt       
+  Copyright (C) 2007 Synopsys, Inc. All Rights Reserved.                       
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the 
+  terms and conditions of the license agreement found in:
+    C:\synopsys\Hspice_Z-2007.03\license.txt
+  Use of this program is your acceptance to be bound by this 
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: f:\major_project\codes\gnrfet\adiabatic_logic\ecrl\2_1mux\init.sp 
+  lic:  
+  lic: FLEXlm: v8.4b 
+  lic: USER:   MAHADIKAR M          HOSTNAME: Megaraj 
+  lic: HOSTID: "4ae3477af0ef 1ae3477af0ef 28e3477af0ef a01d4811dd4f 080027004899
+ "
+  lic: Using FLEXlm license file: 
+  lic: c:\synopsys\hspice_2007-09.lic 
+  lic: Checkout 1 hspice;  Encryption code: AD47C1C891DA5D596A45 
+  lic: License/Maintenance for hspice will expire on 31-dec-2020/2007.9 
+  lic: NODE LOCKED license on hostid "4ae3477af0ef 1ae3477af0ef 28e3477af0ef a01
+ d
+  lic:   
+ Init: read install configuration file: C:\synopsys\Hspice_Z-2007.03\meta.cfg
+  Init: hspice initialization file: C:\synopsys\Hspice_Z-2007.03\hspice.ini     
+                                                  
+
+ .options post
+ .options autostop
+ .options autostop
+ .options ingold=2     dcon=1
+ .options ingold=2     dcon=1
+ .options gshunt=1e-12 rmin=1e-15 
+ .options gshunt=1e-12 rmin=1e-15 
+ .options abstol=1e-5  absvdc=1e-4 
+ .options abstol=1e-5  absvdc=1e-4 
+ .options reltol=1e-2  relvdc=1e-2 
+ .options reltol=1e-2  relvdc=1e-2 
+ .options numdgt=4     pivot=1
+ .options numdgt=4     pivot=1
+ *.options trcon=0
+ *.options trcon=0
+
+ *library file*
+ .lib 'gnrfet.lib' gnrfet
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\ecrl\2_1mux\ecrl_2_1_mux.sp"
+ .endl gnrfet
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\ecrl\2_1mux\ecrl_2_1_mux.sp"
+ .param   temp=27
+ ******************************ecrl mux 2x1***************************************
+ .subckt ecrl_mux2_1 pwr_clk s a b s_b a_b b_b y y_b
+ xm1p y_b y pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1p y_b y pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y y_b pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y y_b pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_b s_b net1 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_b s_b net1 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n net1 a gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n net1 a gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm3n y_b s net2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm3n y_b s net2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net2 b gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net2 b gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n y s_b net3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n y s_b net3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n y b_b net3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n y b_b net3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n net3 s gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n net3 s gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n net3 a_b gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n net3 a_b gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ .ends ecrl_mux2_1
+ .ends ecrl_mux2_1
+ .param   temp=27
+
+ .global gnd
+
+
+
+ va va gnd pulse 0 .5 2n 0.1n 0.1n 2n 10n
+ vab vab gnd pulse 0 .5 6.5n 0.1n 0.1n 2.5n 10.5n
+ vab vab gnd pulse 0 .5 6.5n 0.1n 0.1n 2.5n 10.5n
+ vbb vbb gnd pulse 0 .5 2n .1n .1n 2n 10n 
+ vbb vbb gnd pulse 0 .5 2n .1n .1n 2n 10n 
+ vb vb gnd pulse 0 .5 6.5n 0.1n 0.1n 2.5n 10.5n
+ vb vb gnd pulse 0 .5 6.5n 0.1n 0.1n 2.5n 10.5n
+ vc vc gnd pulse 0 .5 2n .1n .1n 2n 10n 
+ vc vc gnd pulse 0 .5 2n .1n .1n 2n 10n 
+ vcb vcb gnd pulse 0 .5 6.5n 0.1n 0.1n 2.5n 10.5n
+ vcb vcb gnd pulse 0 .5 6.5n 0.1n 0.1n 2.5n 10.5n
+ v2 v2 0 pulse .5 0 0 .5n .5n 2n 5.0n
+ v2 v2 0 pulse .5 0 0 .5n .5n 2n 5.0n
+
+ xadder v2 va vb vc vab vbb vcb y yb ecrl_mux2_1
+
+
+ * transient analysis *
+
+
+ * transient analysis *
+ .op
+ .tran 1n 25n
+ .tran 1n 25n
+ .print power
+ .print power
+ .end 
+ .end 
+
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:58:22 02/02/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  circuit name directory                                               
+ ******  
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xadder.                         ecrl_mux2_1        1.00 
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:va                  new dc=  0.0000D+00
+
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:vab                 new dc=  0.0000D+00
+
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:vbb                 new dc=  0.0000D+00
+
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:vb                  new dc=  0.0000D+00
+
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:vc                  new dc=  0.0000D+00
+
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:vcb                 new dc=  0.0000D+00
+
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:v2                  new dc=  0.5000D+00
+
+  Opening plot unit= 79
+ file=f:\major_project\codes\gnrfet\adiabatic_logic\ecrl\2_1mux\init.pa0       
+
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:58:22 02/02/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  operating point information      tnom=  25.000 temp=  25.000         
+ ******  
+ ***** operating point status is all       simulation time is     0.     
+     node    =voltage       node    =voltage       node    =voltage
+
+ + 0:v2      = 5.000e-01  0:va      =   0.       0:vab     =   0.     
+ + 0:vb      =   0.       0:vbb     =   0.       0:vc      =   0.     
+ + 0:vcb     =   0.       0:y       = 4.710e-01  0:yb      = 4.710e-01
+ + 1:net1    = 4.789e-02  1:net2    = 4.789e-02  1:net3    = 4.789e-02
+
+
+ ****  voltage sources
+
+ subckt                                                              
+ element   0:va        0:vab       0:vbb       0:vb        0:vc      
+  volts       0.          0.          0.          0.          0.     
+  current     0.          0.          0.          0.          0.     
+  power       0.          0.          0.          0.          0.     
+
+ subckt                          
+ element   0:vcb       0:v2      
+  volts       0.        5.000e-01
+  current     0.       -4.588e-10
+  power       0.        2.294e-10
+
+     total voltage source power dissipation=  2.294e-10       watts
+
+
+ ******  
+  init                                                                         
+  ******  transient analysis               tnom=  25.000 temp=  25.000         
+ ******  
+x
+
+        time    power      
+                total      
+    0.          2.240e-10  
+  1.0000e-09    1.436e-10  
+  2.0000e-09    1.562e-10  
+  3.0000e-09   -7.950e-05  
+  4.0000e-09    6.909e-08  
+  5.0000e-09   -2.273e-05  
+  6.0000e-09    2.092e-10  
+  7.0000e-09    1.117e-04  
+  8.0000e-09    5.380e-07  
+  9.0000e-09    6.502e-07  
+  1.0000e-08   -2.269e-05  
+  1.1000e-08    7.936e-11  
+  1.2000e-08    2.841e-10  
+  1.3000e-08    2.071e-05  
+  1.4000e-08    1.081e-07  
+  1.5000e-08   -2.058e-05  
+  1.6000e-08    5.565e-12  
+  1.7000e-08    2.270e-10  
+  1.8000e-08    5.326e-07  
+  1.9000e-08    3.529e-07  
+  2.0000e-08   -1.637e-05  
+  2.1000e-08    5.189e-11  
+  2.2000e-08    3.773e-10  
+  2.3000e-08    2.072e-05  
+  2.4000e-08    1.081e-07  
+  2.5000e-08   -2.058e-05  
+y
+
+          ***** job concluded
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:58:22 02/02/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  job statistics summary           tnom=  25.000 temp=  25.000         
+ ******  
+
+           total memory used        767 kbytes
+
+  # nodes =      79 # elements=     181
+  # diodes=       0 # bjts    =       0 # jfets   =       0 # mosfets =       0
+  # va device =       0
+
+    analysis           time    # points   tot. iter  conv.iter
+
+    op point           0.20           1          14
+    transient         10.60          26         801         207 rev=         8
+    readin             0.09
+    errchk             0.12
+    setup              0.03
+    output             0.00
+           total cpu time         11.10 seconds
+               job started at  13:58:22 02/02/2016
+               job ended   at  13:58:33 02/02/2016
+
+
+  Init: hspice initialization file: C:\synopsys\Hspice_Z-2007.03\hspice.ini     
+                                                  
+  lic: Release hspice token(s) 
