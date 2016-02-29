@@ -1,11 +1,13 @@
+# File Created by hearttransplant at Sat Feb 20 00:01:04 2016
+# assisted by CdsLibEditor
 SOFTINCLUDE dfII/cds.lib
 SOFTINCLUDE hdl/cds.lib
 SOFTINCLUDE pic/cds.lib
 SOFTINCLUDE sg/cds.lib
 
 DEFINE analogLib $CDS/tools/dfII/etc/cdslib/artist/analogLib
-DEFINE US_8ths   $CDS/tools/dfII/etc/cdslib/sheets/US_8ths
-DEFINE basic     $CDS/tools/dfII/etc/cdslib/basic
+DEFINE US_8ths $CDS/tools/dfII/etc/cdslib/sheets/US_8ths
+DEFINE basic $CDS/tools/dfII/etc/cdslib/basic
 
 DEFINE gpdk090 /opt/cadence/virtuoso/tools/dfII/gpdk090_v4.6/libs.oa22/gpdk090
 DEFINE gpdk045 /home/heart/gpdk045_v_2_OpreRelease/gpdk045
@@ -15,4 +17,5 @@ DEFINE ALU /home/heart/work/ALU
 DEFINE try_one /home/heart/work/try_one
 DEFINE try_two /home/heart/work/try_two
 DEFINE for_project /home/heart/work/for_project
-DEFINE Tech_seminar_MM /home/heart/work/Tech_seminar_MM
+DEFINE Tech_Seminar_MM /home/heart/work/Tech_Seminar_MM
+#Removed by ddDeleteObj: DEFINE Tech_seminar_SM /home/heart/work/Tech_seminar_SM

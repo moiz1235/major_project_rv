@@ -6,11 +6,11 @@
 LockStakeVersion               1.1
 LoginName                      heart
 HostName                       heartprob
-ProcessIdentifier              3102
-ProcessCreationTime_UTC        1455876591
-ProcessCreationTime_Readable   Fri Feb 19 15:39:51 2016 IST
+ProcessIdentifier              3274
+ProcessCreationTime_UTC        1456037674
+ProcessCreationTime_Readable   Sun Feb 21 12:24:34 2016 IST
 AppIdentifier                  OA File System Design Manager
 OSType                         unix
 ReasonForPlacingEditLock       OpenAccess edit lock
-FilePathUsedToEditLock         /home/heart/work/Tech_Seminar_MM/and4/schematic/sch.oa.cdslck.dirlck
-TimeEditLocked                 Fri Feb 19 15:50:40 2016 IST
+FilePathUsedToEditLock         /home/heart/work/ALU/nand2/schematic/sch.oa.cdslck.dirlck
+TimeEditLocked                 Sun Feb 21 12:51:12 2016 IST

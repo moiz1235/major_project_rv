@@ -1,0 +1,47 @@
+\o Program:		@(#)$CDS: cdsLibEditor version 6.1.6 - CAT33 02/20/2013 14:27 (sjfnl893) $
+\o Sub version:		sub-version  p011 
+\o Arguments:		-cdslib /home/heart/work/cds.lib -mpssession virtuoso8061 -mpshost heartprob 
+\o Working Directory:	heartprob:/home/heart/work
+\a nrSetWindowVisibility(cdsLibEditor "show")
+\o Qt version: 		4.7.2
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrResizeWindow(cdsLibEditor list(202 80 500 400))
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrListItemAction(cdsLibEditor->mainTable 0 0)
+\o Active cell: 0 0 "analogLib"
+\a nrListItemAction(cdsLibEditor->mainTable 10 1)
+\o Active cell: 10 1 "/home/heart/work/Tech_Seminar_MM"
+\a nrListItemAction(cdsLibEditor->mainTable 9 1)
+\o Active cell: 9 1 "/home/heart/work/for_project"
+\o QUESTION (CLE-200): The directory "/home/heart/work/for_project " \ndoesn't exist. If other tools use this file, \nan error will occur unless you either create \nthe directory you have specified or change the \npath to an existing directory. \n\nDo you want to create a new library? 
+\a nrSetWindowVisibility(needCreateDialog "show")
+\a nrSetCurrentWindow(needCreateDialog)
+\a nrResizeWindow(needCreateDialog list(277 172 350 200))
+\a needCreateDialog->cancelButton->value = t
+\a nrListItemAction(cdsLibEditor->mainTable 8 1)
+\o Active cell: 8 1 "/home/heart/work/try_two"
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrListItemAction(cdsLibEditor->mainTable 9 1)
+\o Active cell: 9 1 "/home/heart/work/for_project "
+\a nrListItemAction(cdsLibEditor->mainTable 10 1)
+\o Active cell: 10 1 "/home/heart/work/Tech_Seminar_MM"
+\o QUESTION (CLE-200): The directory "/home/heart/work/Tech_Seminar_MM " \ndoesn't exist. If other tools use this file, \nan error will occur unless you either create \nthe directory you have specified or change the \npath to an existing directory. \n\nDo you want to create a new library? 
+\a nrSetWindowVisibility(needCreateDialog "show")
+\a nrSetCurrentWindow(needCreateDialog)
+\a nrResizeWindow(needCreateDialog list(272 172 361 200))
+\a needCreateDialog->cancelButton->value = t
+\a nrListItemAction(cdsLibEditor->mainTable 11 1)
+\o Active cell: 11 1 ""
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrListItemAction(cdsLibEditor->mainTable 9 1)
+\o Active cell: 9 1 "/home/heart/work/for_project "
+\a nrListItemAction(cdsLibEditor->mainTable 10 0)
+\o Active cell: 10 0 "Tech_seminar_MM"
+\a nrListItemAction(cdsLibEditor->mainTable 10 1)
+\o Active cell: 10 1 "/home/heart/work/Tech_Seminar_MM "
+\a nrListItemAction(cdsLibEditor->mainTable 11 0)
+\o Active cell: 11 0 ""
+\a cdsLibEditor->fileSaveButton->value = t
+\a cdsLibEditor->fileExitButton->value = t
+\a nrSetWindowVisibility(cdsLibEditor "hide")
+\a exit(0)
