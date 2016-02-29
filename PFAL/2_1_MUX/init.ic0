@@ -1,0 +1,25 @@
+* "simulator" "HSPICE" 
+* "version" "Z-2007.03       "
+* "format" "HSP"
+* "rundate" "14:01:54 02/02/2016 "
+* "netlist" "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\2_1_mux\init.sp "
+* "runtitle" " init                                                            "
+* time =    0.            
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ v2 = 5.000e-01       
++ va =   0.            
++ vab =   0.            
++ vb =   0.            
++ vbb =   0.            
++ vc =   0.            
++ vcb =   0.            
++ y = 2.500e-01       
++ yb = 2.500e-01       
++ xadder.net1 = 1.999e-01       
++ xadder.net2 = 1.999e-01       
++ xadder.net3 = 2.057e-01       
+***   END: Saved Operating Point ***                     

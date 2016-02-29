@@ -1,0 +1,25 @@
+pnlAddPane();
+nil
+1
+designOpen("F:\\MAJOR_PROJECT\\Codes\\CMOS\\Adiabatic\\ECRL\\ALU\\ALU_RCA_con\\init.tr0");
+"D0"
+t
+pnlAddCurve(1, node(D0,"A0","v(cout)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(s0)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(s1)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(s2)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(vclk2)"), node(D0,"A0","TIME"));
+nil
+pnlUnselectPane(1, 0);
+nil
+pnlSelectPane(1);
+nil
+quit();
+exit
+pnlDeletePane(1, 1);
+nil
+nil

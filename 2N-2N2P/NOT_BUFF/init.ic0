@@ -1,0 +1,18 @@
+* "simulator" "HSPICE" 
+* "version" "Z-2007.03       "
+* "format" "HSP"
+* "rundate" "12:24:44 02/02/2016 "
+* "netlist" "f:\major_project\codes\gnrfet\adiabatic_logic\2n-2n2p\not_buff\init.sp "
+* "runtitle" " init                                                            "
+* time =    0.            
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ v2 = 5.000e-01       
++ va =   0.            
++ vab =   0.            
++ y = 2.500e-01       
++ yb = 2.500e-01       
+***   END: Saved Operating Point ***                     

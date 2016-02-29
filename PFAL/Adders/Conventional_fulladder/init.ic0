@@ -1,0 +1,36 @@
+* "simulator" "HSPICE" 
+* "version" "Z-2007.03       "
+* "format" "HSP"
+* "rundate" "13:07:59 02/10/2016 "
+* "netlist" "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\adders\conventional_fulladder\init.sp "
+* "runtitle" " init                                                            "
+* time =    0.            
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ c =-1.814e-08       
++ cb = 1.432e-10       
++ s =-8.927e-05       
++ sb =-1.631e-08       
++ v2 =   0.            
++ va = 5.000e-01       
++ vab =   0.            
++ vb = 5.000e-01       
++ vbb =   0.            
++ vc =   0.            
++ vcb = 5.000e-01       
++ xadder.vns1 =-9.965e-09       
++ xadder.vns10 =-7.235e-09       
++ xadder.vns11 =-9.644e-09       
++ xadder.vns12 =-8.927e-05       
++ xadder.vns17 = 2.091e-14       
++ xadder.vns18 = 3.878e-10       
++ xadder.vns2 =-6.713e-05       
++ xadder.vns22 =-2.176e-08       
++ xadder.vns23 =-1.088e-08       
++ xadder.vns3 =-1.540e-08       
++ xadder.vns4 =-6.713e-05       
++ xadder.vns9 =-8.927e-05       
+***   END: Saved Operating Point ***                     

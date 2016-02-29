@@ -1,0 +1,33 @@
+pnlAddPane();
+nil
+1
+designOpen("F:\\MAJOR_PROJECT\\Codes\\GNRFET\\Adiabatic_logic\\2N-2N2P\\4_1_MUX\\init.tr0");
+"D0"
+t
+pnlAddCurve(1, node(D0,"A0","v(vs0)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(vs1)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(va)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(vb)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(vc)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(vs0b)"), node(D0,"A0","TIME"));
+nil
+pnlDelCurve(1, node(D0,"A0","v(vs0b)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(vd)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(v2)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(y)"), node(D0,"A0","TIME"));
+nil
+pnlAddCurve(1, node(D0,"A0","v(yb)"), node(D0,"A0","TIME"));
+nil
+quit();
+exit
+pnlDeletePane(1, 1);
+nil
+nil

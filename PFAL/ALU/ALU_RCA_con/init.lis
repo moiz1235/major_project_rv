@@ -1,0 +1,1674 @@
+ ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:27:39 02/10/2016 pcnt       
+  Copyright (C) 2007 Synopsys, Inc. All Rights Reserved.                       
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the 
+  terms and conditions of the license agreement found in:
+    C:\synopsys\Hspice_Z-2007.03\license.txt
+  Use of this program is your acceptance to be bound by this 
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: f:\major_project\codes\gnrfet\adiabatic_logic\pfal\alu\alu_rca_con
+  lic:  
+  lic: FLEXlm: v8.4b 
+  lic: USER:   MAHADIKAR M          HOSTNAME: Megaraj 
+  lic: HOSTID: "4ae3477af0ef 1ae3477af0ef 28e3477af0ef a01d4811dd4f 080027004899
+ "
+  lic: Using FLEXlm license file: 
+  lic: c:\synopsys\hspice_2007-09.lic 
+  lic: Checkout 1 hspice;  Encryption code: AD47C1C891DA5D596A45 
+  lic: License/Maintenance for hspice will expire on 31-dec-2020/2007.9 
+  lic: NODE LOCKED license on hostid "4ae3477af0ef 1ae3477af0ef 28e3477af0ef a01
+ d
+  lic:   
+ Init: read install configuration file: C:\synopsys\Hspice_Z-2007.03\meta.cfg
+  Init: hspice initialization file: C:\synopsys\Hspice_Z-2007.03\hspice.ini     
+                                                  
+ **warning** (F:\MAJOR_PROJECT\Codes\GNRFET\Adiabatic_logic\PFAL\PFAL_NOT_BUFFER\pfal_not_buf.sp:16) .end must be placed in top level
+
+ .options post
+ .options autostop
+ .options autostop
+ .options ingold=2     dcon=1
+ .options ingold=2     dcon=1
+ .options gshunt=1e-12 rmin=1e-9 
+ .options gshunt=1e-12 rmin=1e-9 
+ .options abstol=1e-5  absvdc=1e-4 
+ .options abstol=1e-5  absvdc=1e-4 
+ .options reltol=1e-2  relvdc=1e-2 
+ .options reltol=1e-2  relvdc=1e-2 
+ .options numdgt=4     pivot=1
+ .options numdgt=4     pivot=1
+ .options lvltim=1
+ .options lvltim=1
+ *.options trcon=0
+ *.options trcon=0
+
+ *library file*
+ .lib 'gnrfet.lib' gnrfet
+
+ .global gnd
+ .endl gnrfet
+
+ .global gnd
+ .param   temp=27
+ .param   temp=27
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\alu\alu_rca_con\alu_rca_con.sp"
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\alu\alu_rca_con\alu_rca_con.sp"
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\adders\rca\rca.sp"
+
+
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\adders\conventional_fulladder\full_adder.sp"
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\pfal_not_buffer\pfal_not_buf.sp"
+ full_adder
+
+  **warning** (F:\MAJOR_PROJECT\Codes\GNRFET\Adiabatic_logic\PFAL\Adders\Conventional_fulladder\full_adder.sp:1) 
+ *******************full adder******************
+ .subckt full_adder a ab b bb c cb clk s sb cout coutb
+
+ xm1p s sb clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm1p s sb clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p sb s clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p sb s clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb1n s sb gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb1n s sb gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb2n sb s gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb2n sb s gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ *********sum n tree********
+ xm1n clk cb vns1 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n clk c vns2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n clk c vns2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm3n vns1 b vns3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm3n vns1 b vns3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n vns1 bb vns4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n vns1 bb vns4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n vns2 bb vns3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n vns2 bb vns3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n vns2 b vns4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n vns2 b vns4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n vns3 a sb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n vns3 a sb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n vns4 ab sb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n vns4 ab sb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ *********sum nb tree********
+ xm9n clk c vns9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n clk cb vns10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n clk cb vns10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm11n vns9 bb vns11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm11n vns9 bb vns11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm12n vns9 b vns12 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm12n vns9 b vns12 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm13n vns10 b vns11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm13n vns10 b vns11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm14n vns10 bb vns12 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm14n vns10 bb vns12 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm15n vns11 ab s gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm15n vns11 ab s gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm16n vns12 a s gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm16n vns12 a s gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+
+ xm3p cout coutb clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4p coutb cout clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4p coutb cout clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb3n cout coutb gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb3n cout coutb gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb4n coutb cout gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xmb4n coutb cout gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ *********carry n tree********
+ *********carry n tree********
+ xm17n clk cb vns17 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm18n clk ab vns18 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm18n clk ab vns18 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm19n vns17 ab coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm19n vns17 ab coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm20n vns17 bb coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm20n vns17 bb coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm21n vns18 bb coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm21n vns18 bb coutb gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ *********sum nb tree********
+ xm22n clk c vns22 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm23n clk a vns23 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm23n clk a vns23 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm24n vns22 a cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm24n vns22 a cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm25n vns22 b cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm25n vns22 b cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm26n vns23 b cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm26n vns23 b cout gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ .ends full_adder
+
+ end
+
+ end
+  **warning** (F:\MAJOR_PROJECT\Codes\GNRFET\Adiabatic_logic\PFAL\Adders\Conventional_fulladder\full_adder.sp:52) 
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\pfal_not_buffer\pfal_not_buf.sp"
+
+ .subckt ripple_carry_adder clk1 clk2 clk3 clk4 a0 a1 a2 a3 a4 a5 a6 a7 b0 b1 b2 b3 b4 b5 b6 b7 cin a0b a1b a2b a3b a4b a5b a6b a7b b0b b1b b2b b3b b4b b5b b6b b7b cinb s0 s1 s2 s3 s4 s5 s6 s7 cout s0b s1b s2b s3b s4b s5b s6b s7b coutb 
+ not
+
+  **warning** (F:\MAJOR_PROJECT\Codes\GNRFET\Adiabatic_logic\PFAL\PFAL_NOT_BUFFER\pfal_not_buf.sp:1) 
+ *******not gate*******
+ .subckt pfal_not_buff clk a ab y_not y_buf
+ xm1p y_buf y_not clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1p y_buf y_not clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y_not y_buf clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y_not y_buf clk clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm1n y_buf y_not gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y_not y_buf gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y_not y_buf gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm3n clk ab y_not gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n clk a y_buf gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n clk a y_buf gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ .ends pfal_not_buff
+
+ .end
+
+ .subckt ripple_carry_adder clk1 clk2 clk3 clk4 a0 a1 a2 a3 a4 a5 a6 a7 b0 b1 b2 b3 b4 b5 b6 b7 cin a0b a1b a2b a3b a4b a5b a6b a7b b0b b1b b2b b3b b4b b5b b6b b7b cinb s0 s1 s2 s3 s4 s5 s6 s7 cout s0b s1b s2b s3b s4b s5b s6b s7b coutb 
+
+ ****1st stage*****
+
+ ****1st stage*****
+ xadder1 a0 a0b b0 b0b cin cinb clk1 s01 s01b c1 c1b full_adder
+ xinv_buf1 clk1 a1 a1b  a11b a11 pfal_not_buff
+ xinv_buf1 clk1 a1 a1b  a11b a11 pfal_not_buff
+ xinv_buf2 clk1 a2 a2b  a21b a21 pfal_not_buff
+ xinv_buf2 clk1 a2 a2b  a21b a21 pfal_not_buff
+ xinv_buf3 clk1 a3 a3b  a31b a31 pfal_not_buff
+ xinv_buf3 clk1 a3 a3b  a31b a31 pfal_not_buff
+ xinv_buf4 clk1 a4 a4b  a41b a41 pfal_not_buff
+ xinv_buf4 clk1 a4 a4b  a41b a41 pfal_not_buff
+ xinv_buf5 clk1 a5 a5b  a51b a51 pfal_not_buff
+ xinv_buf5 clk1 a5 a5b  a51b a51 pfal_not_buff
+ xinv_buf6 clk1 a6 a6b  a61b a61 pfal_not_buff
+ xinv_buf6 clk1 a6 a6b  a61b a61 pfal_not_buff
+ xinv_buf7 clk1 a7 a7b  a71b a71 pfal_not_buff
+ xinv_buf7 clk1 a7 a7b  a71b a71 pfal_not_buff
+ xinv_buf8 clk1 b1 b1b  b11b b11 pfal_not_buff
+ xinv_buf8 clk1 b1 b1b  b11b b11 pfal_not_buff
+ xinv_buf9 clk1 b2 b2b  b21b b21 pfal_not_buff
+ xinv_buf9 clk1 b2 b2b  b21b b21 pfal_not_buff
+ xinv_buf10 clk1 b3 b3b  b31b b31 pfal_not_buff
+ xinv_buf10 clk1 b3 b3b  b31b b31 pfal_not_buff
+ xinv_buf11 clk1 b4 b4b  b41b b41 pfal_not_buff
+ xinv_buf11 clk1 b4 b4b  b41b b41 pfal_not_buff
+ xinv_buf12 clk1 b5 b5b  b51b b51 pfal_not_buff
+ xinv_buf12 clk1 b5 b5b  b51b b51 pfal_not_buff
+ xinv_buf13 clk1 b6 b6b  b61b b61 pfal_not_buff
+ xinv_buf13 clk1 b6 b6b  b61b b61 pfal_not_buff
+ xinv_buf14 clk1 b7 b7b  b71b b71 pfal_not_buff
+ xinv_buf14 clk1 b7 b7b  b71b b71 pfal_not_buff
+
+ ****2st stage*****
+ xadder2 a11 a11b b11 b11b c1 c1b clk2 s12 s12b c2 c2b full_adder
+ xinv_buf15 clk2 s01 s01b s02b s02 pfal_not_buff
+ xinv_buf15 clk2 s01 s01b s02b s02 pfal_not_buff
+ xinv_buf16 clk2 a21 a21b a22b a22 pfal_not_buff
+ xinv_buf16 clk2 a21 a21b a22b a22 pfal_not_buff
+ xinv_buf17 clk2 a31 a31b a32b a32 pfal_not_buff
+ xinv_buf17 clk2 a31 a31b a32b a32 pfal_not_buff
+ xinv_buf18 clk2 a41 a41b a42b a42 pfal_not_buff
+ xinv_buf18 clk2 a41 a41b a42b a42 pfal_not_buff
+ xinv_buf19 clk2 a51 a51b a52b a52 pfal_not_buff
+ xinv_buf19 clk2 a51 a51b a52b a52 pfal_not_buff
+ xinv_buf20 clk2 a61 a61b a62b a62 pfal_not_buff
+ xinv_buf20 clk2 a61 a61b a62b a62 pfal_not_buff
+ xinv_buf21 clk2 a71 a71b a72b a72 pfal_not_buff
+ xinv_buf21 clk2 a71 a71b a72b a72 pfal_not_buff
+ xinv_buf22 clk2 b21 b21b b22b b22 pfal_not_buff
+ xinv_buf22 clk2 b21 b21b b22b b22 pfal_not_buff
+ xinv_buf23 clk2 b31 b31b b32b b32 pfal_not_buff
+ xinv_buf23 clk2 b31 b31b b32b b32 pfal_not_buff
+ xinv_buf24 clk2 b41 b41b b42b b42 pfal_not_buff
+ xinv_buf24 clk2 b41 b41b b42b b42 pfal_not_buff
+ xinv_buf25 clk2 b51 b51b b52b b52 pfal_not_buff
+ xinv_buf25 clk2 b51 b51b b52b b52 pfal_not_buff
+ xinv_buf26 clk2 b61 b61b b62b b62 pfal_not_buff
+ xinv_buf26 clk2 b61 b61b b62b b62 pfal_not_buff
+ xinv_buf27 clk2 b71 b71b b72b b72 pfal_not_buff
+ xinv_buf27 clk2 b71 b71b b72b b72 pfal_not_buff
+
+ ****3st stage*****
+ xadder3 a22 a22b b22 b22b c2 c2b clk3 s23 s23b c3 c3b full_adder
+ xinv_buf28 clk3 s02 s02b  s03b s03 pfal_not_buff
+ xinv_buf28 clk3 s02 s02b  s03b s03 pfal_not_buff
+ xinv_buf29 clk3 s12 s12b  s13b s13 pfal_not_buff
+ xinv_buf29 clk3 s12 s12b  s13b s13 pfal_not_buff
+ xinv_buf30 clk3 a32 a32b  a33b a33 pfal_not_buff
+ xinv_buf30 clk3 a32 a32b  a33b a33 pfal_not_buff
+ xinv_buf31 clk3 a42 a42b  a43b a43 pfal_not_buff
+ xinv_buf31 clk3 a42 a42b  a43b a43 pfal_not_buff
+ xinv_buf32 clk3 a52 a52b  a53b a53 pfal_not_buff
+ xinv_buf32 clk3 a52 a52b  a53b a53 pfal_not_buff
+ xinv_buf33 clk3 a62 a62b  a63b a63 pfal_not_buff
+ xinv_buf33 clk3 a62 a62b  a63b a63 pfal_not_buff
+ xinv_buf34 clk3 a72 a72b  a73b a73 pfal_not_buff
+ xinv_buf34 clk3 a72 a72b  a73b a73 pfal_not_buff
+ xinv_buf35 clk3 b32 b32b  b33b b33 pfal_not_buff
+ xinv_buf35 clk3 b32 b32b  b33b b33 pfal_not_buff
+ xinv_buf36 clk3 b42 b42b  b43b b43 pfal_not_buff
+ xinv_buf36 clk3 b42 b42b  b43b b43 pfal_not_buff
+ xinv_buf37 clk3 b52 b52b  b53b b53 pfal_not_buff
+ xinv_buf37 clk3 b52 b52b  b53b b53 pfal_not_buff
+ xinv_buf38 clk3 b62 b62b  b63b b63 pfal_not_buff
+ xinv_buf38 clk3 b62 b62b  b63b b63 pfal_not_buff
+ xinv_buf39 clk3 b72 b72b  b73b b73 pfal_not_buff
+ xinv_buf39 clk3 b72 b72b  b73b b73 pfal_not_buff
+
+ ****4st stage*****
+ xadder4 a33 a33b b33 b33b c3 c3b clk4 s34 s34b c4 c4b full_adder
+ xinv_buf40 clk4 s03 s03b  s04b s04 pfal_not_buff
+ xinv_buf40 clk4 s03 s03b  s04b s04 pfal_not_buff
+ xinv_buf41 clk4 s13 s13b  s14b s14 pfal_not_buff
+ xinv_buf41 clk4 s13 s13b  s14b s14 pfal_not_buff
+ xinv_buf42 clk4 s23 s23b  s24b s24 pfal_not_buff
+ xinv_buf42 clk4 s23 s23b  s24b s24 pfal_not_buff
+ xinv_buf43 clk4 a43 a43b  a44b a44 pfal_not_buff
+ xinv_buf43 clk4 a43 a43b  a44b a44 pfal_not_buff
+ xinv_buf44 clk4 a53 a53b  a54b a54 pfal_not_buff
+ xinv_buf44 clk4 a53 a53b  a54b a54 pfal_not_buff
+ xinv_buf45 clk4 a63 a63b  a64b a64 pfal_not_buff
+ xinv_buf45 clk4 a63 a63b  a64b a64 pfal_not_buff
+ xinv_buf46 clk4 a73 a73b  a74b a74 pfal_not_buff
+ xinv_buf46 clk4 a73 a73b  a74b a74 pfal_not_buff
+ xinv_buf47 clk4 b43 b43b  b44b b44 pfal_not_buff
+ xinv_buf47 clk4 b43 b43b  b44b b44 pfal_not_buff
+ xinv_buf48 clk4 b53 b53b  b54b b54 pfal_not_buff
+ xinv_buf48 clk4 b53 b53b  b54b b54 pfal_not_buff
+ xinv_buf49 clk4 b63 b63b  b64b b64 pfal_not_buff
+ xinv_buf49 clk4 b63 b63b  b64b b64 pfal_not_buff
+ xinv_buf50 clk4 b73 b73b  b74b b74 pfal_not_buff
+ xinv_buf50 clk4 b73 b73b  b74b b74 pfal_not_buff
+
+
+ ****5st stage*****
+ xadder5 a44 a44b b44 b44b c4 c4b clk1 s45 s45b c5 c5b full_adder
+ xinv_buf51 clk1 s04 s04b s05b s05 pfal_not_buff
+ xinv_buf51 clk1 s04 s04b s05b s05 pfal_not_buff
+ xinv_buf52 clk1 s14 s14b s15b s15 pfal_not_buff
+ xinv_buf52 clk1 s14 s14b s15b s15 pfal_not_buff
+ xinv_buf53 clk1 s24 s24b s25b s25 pfal_not_buff
+ xinv_buf53 clk1 s24 s24b s25b s25 pfal_not_buff
+ xinv_buf54 clk1 s34 s34b s35b s35 pfal_not_buff
+ xinv_buf54 clk1 s34 s34b s35b s35 pfal_not_buff
+ xinv_buf55 clk1 a54 a54b a55b a55 pfal_not_buff
+ xinv_buf55 clk1 a54 a54b a55b a55 pfal_not_buff
+ xinv_buf56 clk1 a64 a64b a65b a65 pfal_not_buff
+ xinv_buf56 clk1 a64 a64b a65b a65 pfal_not_buff
+ xinv_buf57 clk1 a74 a74b a75b a75 pfal_not_buff
+ xinv_buf57 clk1 a74 a74b a75b a75 pfal_not_buff
+ xinv_buf58 clk1 b54 b54b b55b b55 pfal_not_buff
+ xinv_buf58 clk1 b54 b54b b55b b55 pfal_not_buff
+ xinv_buf59 clk1 b64 b64b b65b b65 pfal_not_buff
+ xinv_buf59 clk1 b64 b64b b65b b65 pfal_not_buff
+ xinv_buf60 clk1 b74 b74b b75b b75 pfal_not_buff
+ xinv_buf60 clk1 b74 b74b b75b b75 pfal_not_buff
+
+
+ ****6st stage*****
+ xadder6 a55 a55b b55 b55b c5 c5b clk2 s56 s56b c6 c6b full_adder
+ xinv_buf61 clk2 s05 s05b s06b s06 pfal_not_buff
+ xinv_buf61 clk2 s05 s05b s06b s06 pfal_not_buff
+ xinv_buf62 clk2 s15 s15b s16b s16 pfal_not_buff
+ xinv_buf62 clk2 s15 s15b s16b s16 pfal_not_buff
+ xinv_buf63 clk2 s25 s25b s26b s26 pfal_not_buff
+ xinv_buf63 clk2 s25 s25b s26b s26 pfal_not_buff
+ xinv_buf64 clk2 s35 s35b s36b s36 pfal_not_buff
+ xinv_buf64 clk2 s35 s35b s36b s36 pfal_not_buff
+ xinv_buf65 clk2 s45 s45b s46b s46 pfal_not_buff
+ xinv_buf65 clk2 s45 s45b s46b s46 pfal_not_buff
+ xinv_buf66 clk2 a65 a65b a66b a66 pfal_not_buff
+ xinv_buf66 clk2 a65 a65b a66b a66 pfal_not_buff
+ xinv_buf67 clk2 a75 a75b a76b a76 pfal_not_buff
+ xinv_buf67 clk2 a75 a75b a76b a76 pfal_not_buff
+ xinv_buf68 clk2 b65 b65b b66b b66 pfal_not_buff
+ xinv_buf68 clk2 b65 b65b b66b b66 pfal_not_buff
+ xinv_buf69 clk2 b75 b75b b76b b76 pfal_not_buff
+ xinv_buf69 clk2 b75 b75b b76b b76 pfal_not_buff
+
+ ****7st stage*****
+ xadder7 a66 a66b b66 b66b c6 c6b clk3 s67 s67b c7 c7b full_adder
+ xinv_buf70 clk3 s06 s06b s07b s07 pfal_not_buff
+ xinv_buf70 clk3 s06 s06b s07b s07 pfal_not_buff
+ xinv_buf71 clk3 s16 s16b s17b s17 pfal_not_buff
+ xinv_buf71 clk3 s16 s16b s17b s17 pfal_not_buff
+ xinv_buf72 clk3 s26 s26b s27b s27 pfal_not_buff
+ xinv_buf72 clk3 s26 s26b s27b s27 pfal_not_buff
+ xinv_buf73 clk3 s36 s36b s37b s37 pfal_not_buff
+ xinv_buf73 clk3 s36 s36b s37b s37 pfal_not_buff
+ xinv_buf74 clk3 s46 s46b s47b s47 pfal_not_buff
+ xinv_buf74 clk3 s46 s46b s47b s47 pfal_not_buff
+ xinv_buf75 clk3 s56 s56b s57b s57 pfal_not_buff
+ xinv_buf75 clk3 s56 s56b s57b s57 pfal_not_buff
+ xinv_buf76 clk3 a76 a76b a77b a77 pfal_not_buff
+ xinv_buf76 clk3 a76 a76b a77b a77 pfal_not_buff
+ xinv_buf77 clk3 b76 b76b b77b b77 pfal_not_buff
+ xinv_buf77 clk3 b76 b76b b77b b77 pfal_not_buff
+
+ ****8st stage*****
+ xadder8 a77 a77b b77 b77b c7 c7b clk4 s7 s7b cout coutb full_adder
+ xinv_buf78 clk4 s07 s07b s0b s0 pfal_not_buff
+ xinv_buf78 clk4 s07 s07b s0b s0 pfal_not_buff
+ xinv_buf79 clk4 s17 s17b s1b s1 pfal_not_buff
+ xinv_buf79 clk4 s17 s17b s1b s1 pfal_not_buff
+ xinv_buf80 clk4 s27 s27b s2b s2 pfal_not_buff
+ xinv_buf80 clk4 s27 s27b s2b s2 pfal_not_buff
+ xinv_buf81 clk4 s37 s37b s3b s3 pfal_not_buff
+ xinv_buf81 clk4 s37 s37b s3b s3 pfal_not_buff
+ xinv_buf82 clk4 s47 s47b s4b s4 pfal_not_buff
+ xinv_buf82 clk4 s47 s47b s4b s4 pfal_not_buff
+ xinv_buf83 clk4 s57 s57b s5b s5 pfal_not_buff
+ xinv_buf83 clk4 s57 s57b s5b s5 pfal_not_buff
+ xinv_buf84 clk4 s67 s67b s6b s6 pfal_not_buff
+ xinv_buf84 clk4 s67 s67b s6b s6 pfal_not_buff
+
+ .ends ripple_carry_adder
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\nor_or\pfal_nor_or.sp"
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\2_1_mux\pfal_2_1_mux.sp"
+ ***************************pfal nor or*****************************************
+ .subckt pfal_nor_or pwr_clk vin1 vin2 vin1_b vin2_b y_nor y_or
+ xm1p y_or y_nor pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1p y_or y_nor pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y_nor y_or pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y_nor y_or pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_or y_nor gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_or y_nor gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y_nor y_or gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y_nor y_or gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm3n pwr_clk vin1 y_or gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n pwr_clk vin2 y_or gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n pwr_clk vin2 y_or gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm5n pwr_clk vin1_b net1 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n net1 vin2_b y_nor gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n net1 vin2_b y_nor gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ .ends pfal_nor_or
+ .ends pfal_nor_or
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\2_1_mux\pfal_2_1_mux.sp"
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\4_1_mux\pfal_4_1_mux.sp"
+ ******************************pfal mux 2x1***************************************
+ .subckt pfal_mux2_1 pwr_clk s a b s_b a_b b_b y y_b
+ xm1p y y_b pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1p y y_b pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y_b y pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y_b y pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y y_b gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y y_b gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y_b y gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y_b y gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm3n pwr_clk s_b net1 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net1 a y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net1 a y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n pwr_clk s net2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n pwr_clk s net2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n net2 b y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n net2 b y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n pwr_clk s_b net3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n pwr_clk s_b net3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n pwr_clk b_b net3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n pwr_clk b_b net3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm9n net3 s y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm9n net3 s y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n net3 a_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n net3 a_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ .ends pfal_mux2_1
+ .ends pfal_mux2_1
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\4_1_mux\pfal_4_1_mux.sp"
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\pfal_nand_and\pfal_nand_and.sp"
+ *****************************pfal mux 4x1***************************************
+ .subckt pfal_mux4_1 pwr_clk s1 s0 a b c d s1_b s0_b a_b b_b c_b d_b y y_b
+ xm1p y_b y pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1p y_b y pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y y_b pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y y_b pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_b y gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_b y gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y y_b gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y y_b gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm3n pwr_clk a net1 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net1 s0_b net2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net1 s0_b net2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n net2 s1_b y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n net2 s1_b y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm6n pwr_clk b net3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n net3 s0 net4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n net3 s0 net4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n net4 s1_b y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n net4 s1_b y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm9n pwr_clk c net5 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n net5 s0_b net6 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n net5 s0_b net6 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm11n net6 s1 y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm11n net6 s1 y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm12n pwr_clk d net7 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm13n net7 s0 net8 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm13n net7 s0 net8 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm14n net8 s1 y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm14n net8 s1 y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm15n pwr_clk a_b net9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm16n pwr_clk s0 net9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm16n pwr_clk s0 net9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm17n pwr_clk s1 net9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm17n pwr_clk s1 net9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm18n net9 b_b net10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm19n net9 s0_b net10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm19n net9 s0_b net10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm20n net9 s1 net10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm20n net9 s1 net10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm21n net10 c_b net11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm22n net10 s0 net11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm22n net10 s0 net11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm23n net10 s1_b net11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm23n net10 s1_b net11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm24n net11 d_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm25n net11 s0_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm25n net11 s0_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm26n net11 s1_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm26n net11 s1_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ .ends pfal_mux4_1
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\pfal_nand_and\pfal_nand_and.sp"
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\xor_xnor\pfal_xor_xnor.sp"
+ *********************pfal nand and**************************************
+ .subckt pfal_nand_and pwr_clk vin1 vin2 vin1_b vin2_b y_nand y_and 
+ xm1p y_and y_nand pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1p y_and y_nand pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y_nand y_and pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y_nand y_and pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_and y_nand gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_and y_nand gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y_nand y_and gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y_nand y_and gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm3n pwr_clk vin1 net1 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net1 vin2 y_and gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net1 vin2 y_and gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm5n pwr_clk vin1_b y_nand gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n pwr_clk vin2_b y_nand gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n pwr_clk vin2_b y_nand gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ .ends pfal_nand_and
+ .ends pfal_nand_and
+ ************************************************************************
+
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\xor_xnor\pfal_xor_xnor.sp"
+
+
+ *************************pfal xor xnor******************************
+ .subckt pfal_xor_xnor pwr_clk a b a_b b_b y_xor y_xnor
+ xm1p y_xnor y_xor pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1p y_xnor y_xor pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y_xor y_xnor pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y_xor y_xnor pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_xnor y_xor gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_xnor y_xor gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y_xor y_xnor gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y_xor y_xnor gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm3n pwr_clk a net1 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net1 b_b y_xor gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net1 b_b y_xor gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n pwr_clk a_b net2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n pwr_clk a_b net2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n net2 b y_xor gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm6n net2 b y_xor gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm7n pwr_clk a net3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n net3 b y_xnor gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n net3 b y_xnor gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm9n pwr_clk a_b net4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm9n pwr_clk a_b net4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n net4 b_b y_xnor gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n net4 b_b y_xnor gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ .ends pfal_xor_xnor
+ .ends pfal_xor_xnor
+
+
+ ***********************ecrl_alu********************************************************************************************************************************************************************************************************************************************
+ .subckt pfal_alu_rca_con phi1 phi2 phi3 phi4 s2 s1 s0 a0 a1 a2 a3 a4 a5 a6 a7 b0 b1 b2 b3 b4 b5 b6 b7 cin s2_b s1_b s0_b a0_b a1_b a2_b a3_b a4_b a5_b a6_b a7_b b0_b b1_b b2_b b3_b b4_b b5_b b6_b b7_b cin_b out0 out1 out2 out3 out4 out5 out6 out7 cout out0_b out1_b out2_b out3_b out4_b out5_b out6_b out7_b cout_b
+
+ vhi vhi gnd pat (.5 0 0 0.01n 0.01n 3n b1010101010 r=10)  
+
+ vhi vhi gnd pat (.5 0 0 0.01n 0.01n 3n b1010101010 r=10)  
+
+ **********initial input selection stage  phi1 clk**************************************
+
+ **********initial input selection stage  phi1 clk**************************************
+ xmux1 phi1 s1 s0 vhi b0 b0_b gnd s1_b s0_b gnd b0_b b0 vhi op0 op0_b pfal_mux4_1
+ xmux2 phi1 s1 s0 gnd b1 b1_b gnd s1_b s0_b vhi b1_b b1 vhi op1 op1_b pfal_mux4_1
+ xmux2 phi1 s1 s0 gnd b1 b1_b gnd s1_b s0_b vhi b1_b b1 vhi op1 op1_b pfal_mux4_1
+ xmux3 phi1 s1 s0 gnd b2 b2_b gnd s1_b s0_b vhi b2_b b2 vhi op2 op2_b pfal_mux4_1
+ xmux3 phi1 s1 s0 gnd b2 b2_b gnd s1_b s0_b vhi b2_b b2 vhi op2 op2_b pfal_mux4_1
+ xmux4 phi1 s1 s0 gnd b3 b3_b gnd s1_b s0_b vhi b3_b b3 vhi op3 op3_b pfal_mux4_1
+ xmux4 phi1 s1 s0 gnd b3 b3_b gnd s1_b s0_b vhi b3_b b3 vhi op3 op3_b pfal_mux4_1
+ xmux5 phi1 s1 s0 gnd b4 b4_b gnd s1_b s0_b vhi b4_b b4 vhi op4 op4_b pfal_mux4_1
+ xmux5 phi1 s1 s0 gnd b4 b4_b gnd s1_b s0_b vhi b4_b b4 vhi op4 op4_b pfal_mux4_1
+ xmux6 phi1 s1 s0 gnd b5 b5_b gnd s1_b s0_b vhi b5_b b5 vhi op5 op5_b pfal_mux4_1
+ xmux6 phi1 s1 s0 gnd b5 b5_b gnd s1_b s0_b vhi b5_b b5 vhi op5 op5_b pfal_mux4_1
+ xmux7 phi1 s1 s0 gnd b6 b6_b gnd s1_b s0_b vhi b6_b b6 vhi op6 op6_b pfal_mux4_1
+ xmux7 phi1 s1 s0 gnd b6 b6_b gnd s1_b s0_b vhi b6_b b6 vhi op6 op6_b pfal_mux4_1
+ xmux8 phi1 s1 s0 gnd b7 b7_b gnd s1_b s0_b vhi b7_b b7 vhi op7 op7_b pfal_mux4_1
+ xmux8 phi1 s1 s0 gnd b7 b7_b gnd s1_b s0_b vhi b7_b b7 vhi op7 op7_b pfal_mux4_1
+ ****************************************************************************************
+ ****************************************************************************************
+
+ **********a input through buffer stage with phi1 clk*************************************
+ xinv1 phi1 a0 a0_b opa0_b opa0 pfal_not_buff
+ xinv2 phi1 a1 a1_b opa1_b opa1 pfal_not_buff
+ xinv2 phi1 a1 a1_b opa1_b opa1 pfal_not_buff
+ xinv3 phi1 a2 a2_b opa2_b opa2 pfal_not_buff
+ xinv3 phi1 a2 a2_b opa2_b opa2 pfal_not_buff
+ xinv4 phi1 a3 a3_b opa3_b opa3 pfal_not_buff
+ xinv4 phi1 a3 a3_b opa3_b opa3 pfal_not_buff
+ xinv5 phi1 a4 a4_b opa4_b opa4 pfal_not_buff
+ xinv5 phi1 a4 a4_b opa4_b opa4 pfal_not_buff
+ xinv6 phi1 a5 a5_b opa5_b opa5 pfal_not_buff
+ xinv6 phi1 a5 a5_b opa5_b opa5 pfal_not_buff
+ xinv7 phi1 a6 a6_b opa6_b opa6 pfal_not_buff
+ xinv7 phi1 a6 a6_b opa6_b opa6 pfal_not_buff
+ xinv8 phi1 a7 a7_b opa7_b opa7 pfal_not_buff
+ xinv8 phi1 a7 a7_b opa7_b opa7 pfal_not_buff
+ ******************************************************************************************
+ ******************************************************************************************
+
+ xinv9 phi1 cin cin_b cin_b1 cin1 pfal_not_buff
+ xinv10 phi1 s2 s2_b s21b s21 pfal_not_buff
+ xinv10 phi1 s2 s2_b s21b s21 pfal_not_buff
+
+ ****************************parallel adder stage with phi2,phi3,phi3,phi1 clk**************************************************
+ xpa1 phi2 phi3 phi4 phi1 opa0 opa1 opa2 opa3 opa4 opa5 opa6 opa7 op0 op1 op2 op3 op4 op5 op6 op7 cin1 opa0_b opa1_b opa2_b opa3_b opa4_b opa5_b opa6_b opa7_b op0_b op1_b op2_b op3_b op4_b op5_b op6_b op7_b cin_b1 ar0 ar1 ar2 ar3 ar4 ar5 ar6 ar7 cout1 ar0_b ar1_b ar2_b ar3_b ar4_b ar5_b ar6_b ar7_b cout_b1 ripple_carry_adder
+ **********************************************************************************************************************************
+ **********************************************************************************************************************************
+
+ ********************************nand gate stage with phi1 clk***********************************************
+ xnand1 phi1 a0 b0 a0_b b0_b nand0 and0 pfal_nand_and
+ xnand2 phi1 a1 b1 a1_b b1_b nand1 and1 pfal_nand_and
+ xnand2 phi1 a1 b1 a1_b b1_b nand1 and1 pfal_nand_and
+ xnand3 phi1 a2 b2 a2_b b2_b nand2 and2 pfal_nand_and
+ xnand3 phi1 a2 b2 a2_b b2_b nand2 and2 pfal_nand_and
+ xnand4 phi1 a3 b3 a3_b b3_b nand3 and3 pfal_nand_and
+ xnand4 phi1 a3 b3 a3_b b3_b nand3 and3 pfal_nand_and
+ xnand5 phi1 a4 b4 a4_b b4_b nand4 and4 pfal_nand_and
+ xnand5 phi1 a4 b4 a4_b b4_b nand4 and4 pfal_nand_and
+ xnand6 phi1 a5 b5 a5_b b5_b nand5 and5 pfal_nand_and
+ xnand6 phi1 a5 b5 a5_b b5_b nand5 and5 pfal_nand_and
+ xnand7 phi1 a6 b6 a6_b b6_b nand6 and6 pfal_nand_and
+ xnand7 phi1 a6 b6 a6_b b6_b nand6 and6 pfal_nand_and
+ xnand8 phi1 a7 b7 a7_b b7_b nand7 and7 pfal_nand_and
+ xnand8 phi1 a7 b7 a7_b b7_b nand7 and7 pfal_nand_and
+ *************************************************************************************************************
+ *************************************************************************************************************
+
+
+ ********************************nor gate stage with phi1 clk***********************************************
+ xnor1 phi1 a0 b0 a0_b b0_b nor0 or0 pfal_nor_or
+ xnor2 phi1 a1 b1 a1_b b1_b nor1 or1 pfal_nor_or
+ xnor2 phi1 a1 b1 a1_b b1_b nor1 or1 pfal_nor_or
+ xnor3 phi1 a2 b2 a2_b b2_b nor2 or2 pfal_nor_or
+ xnor3 phi1 a2 b2 a2_b b2_b nor2 or2 pfal_nor_or
+ xnor4 phi1 a3 b3 a3_b b3_b nor3 or3 pfal_nor_or
+ xnor4 phi1 a3 b3 a3_b b3_b nor3 or3 pfal_nor_or
+ xnor5 phi1 a4 b4 a4_b b4_b nor4 or4 pfal_nor_or
+ xnor5 phi1 a4 b4 a4_b b4_b nor4 or4 pfal_nor_or
+ xnor6 phi1 a5 b5 a5_b b5_b nor5 or5 pfal_nor_or
+ xnor6 phi1 a5 b5 a5_b b5_b nor5 or5 pfal_nor_or
+ xnor7 phi1 a6 b6 a6_b b6_b nor6 or6 pfal_nor_or
+ xnor7 phi1 a6 b6 a6_b b6_b nor6 or6 pfal_nor_or
+ xnor8 phi1 a7 b7 a7_b b7_b nor7 or7 pfal_nor_or
+ xnor8 phi1 a7 b7 a7_b b7_b nor7 or7 pfal_nor_or
+ *************************************************************************************************************
+ *************************************************************************************************************
+
+ ********************************xor xnor stage with phi1 clk*************************************
+ xxor1 phi1 a0 b0 a0_b b0_b xor0 xnor0 pfal_xor_xnor
+ xxor2 phi1 a1 b1 a1_b b1_b xor1 xnor1 pfal_xor_xnor
+ xxor2 phi1 a1 b1 a1_b b1_b xor1 xnor1 pfal_xor_xnor
+ xxor3 phi1 a2 b2 a2_b b2_b xor2 xnor2 pfal_xor_xnor
+ xxor3 phi1 a2 b2 a2_b b2_b xor2 xnor2 pfal_xor_xnor
+ xxor4 phi1 a3 b3 a3_b b3_b xor3 xnor3 pfal_xor_xnor
+ xxor4 phi1 a3 b3 a3_b b3_b xor3 xnor3 pfal_xor_xnor
+ xxor5 phi1 a4 b4 a4_b b4_b xor4 xnor4 pfal_xor_xnor
+ xxor5 phi1 a4 b4 a4_b b4_b xor4 xnor4 pfal_xor_xnor
+ xxor6 phi1 a5 b5 a5_b b5_b xor5 xnor5 pfal_xor_xnor
+ xxor6 phi1 a5 b5 a5_b b5_b xor5 xnor5 pfal_xor_xnor
+ xxor7 phi1 a6 b6 a6_b b6_b xor6 xnor6 pfal_xor_xnor
+ xxor7 phi1 a6 b6 a6_b b6_b xor6 xnor6 pfal_xor_xnor
+ xxor8 phi1 a7 b7 a7_b b7_b xor7 xnor7 pfal_xor_xnor
+ xxor8 phi1 a7 b7 a7_b b7_b xor7 xnor7 pfal_xor_xnor
+ **************************************************************************************************
+ **************************************************************************************************
+ *******************************s1 s0 buffer stage for logical*************************************
+ xinv19 phi1 s1 s1_b s11b s11 pfal_not_buff
+ xinv20 phi1 s0 s0_b s01b s01 pfal_not_buff
+ xinv20 phi1 s0 s0_b s01b s01 pfal_not_buff
+ **************************************************************************************************
+ **************************************************************************************************
+ *******************************logical output selection stage with phi2 clk***********************
+ xmux9  phi2 s1 s0 nand0 nor0 xor0 xnor0 s1_b s0_b and0 or0 xnor0 xor0 lo0 lo0_b pfal_mux4_1
+ xmux10 phi2 s1 s0 nand1 nor1 xor1 xnor1 s1_b s0_b and1 or1 xnor1 xor1 lo1 lo1_b pfal_mux4_1
+ xmux10 phi2 s1 s0 nand1 nor1 xor1 xnor1 s1_b s0_b and1 or1 xnor1 xor1 lo1 lo1_b pfal_mux4_1
+ xmux11 phi2 s1 s0 nand2 nor2 xor2 xnor2 s1_b s0_b and2 or2 xnor2 xor2 lo2 lo2_b pfal_mux4_1
+ xmux11 phi2 s1 s0 nand2 nor2 xor2 xnor2 s1_b s0_b and2 or2 xnor2 xor2 lo2 lo2_b pfal_mux4_1
+ xmux12 phi2 s1 s0 nand3 nor3 xor3 xnor3 s1_b s0_b and3 or3 xnor3 xor3 lo3 lo3_b pfal_mux4_1
+ xmux12 phi2 s1 s0 nand3 nor3 xor3 xnor3 s1_b s0_b and3 or3 xnor3 xor3 lo3 lo3_b pfal_mux4_1
+ xmux13 phi2 s1 s0 nand4 nor4 xor4 xnor4 s1_b s0_b and4 or4 xnor4 xor4 lo4 lo4_b pfal_mux4_1
+ xmux13 phi2 s1 s0 nand4 nor4 xor4 xnor4 s1_b s0_b and4 or4 xnor4 xor4 lo4 lo4_b pfal_mux4_1
+ xmux14 phi2 s1 s0 nand5 nor5 xor5 xnor5 s1_b s0_b and5 or5 xnor5 xor5 lo5 lo5_b pfal_mux4_1
+ xmux14 phi2 s1 s0 nand5 nor5 xor5 xnor5 s1_b s0_b and5 or5 xnor5 xor5 lo5 lo5_b pfal_mux4_1
+ xmux15 phi2 s1 s0 nand6 nor6 xor6 xnor6 s1_b s0_b and6 or6 xnor6 xor6 lo6 lo6_b pfal_mux4_1
+ xmux15 phi2 s1 s0 nand6 nor6 xor6 xnor6 s1_b s0_b and6 or6 xnor6 xor6 lo6 lo6_b pfal_mux4_1
+ xmux16 phi2 s1 s0 nand7 nor7 xor7 xnor7 s1_b s0_b and7 or7 xnor7 xor7 lo7 lo7_b pfal_mux4_1
+ xmux16 phi2 s1 s0 nand7 nor7 xor7 xnor7 s1_b s0_b and7 or7 xnor7 xor7 lo7 lo7_b pfal_mux4_1
+ xinv11 phi2 s21 s21b s22b s22 pfal_not_buff
+ xinv11 phi2 s21 s21b s22b s22 pfal_not_buff
+ ***************************************************************************************************
+ ***************************************************************************************************
+
+ ****************************buffer logical 1st stage***********************************************
+ xinv_buf1 phi3 lo0 lo0_b lo01b lo01 pfal_not_buff
+ xinv_buf2 phi3 lo1 lo1_b lo11b lo11 pfal_not_buff
+ xinv_buf2 phi3 lo1 lo1_b lo11b lo11 pfal_not_buff
+ xinv_buf3 phi3 lo2 lo2_b lo21b lo21 pfal_not_buff
+ xinv_buf3 phi3 lo2 lo2_b lo21b lo21 pfal_not_buff
+ xinv_buf4 phi3 lo3 lo3_b lo31b lo31 pfal_not_buff
+ xinv_buf4 phi3 lo3 lo3_b lo31b lo31 pfal_not_buff
+ xinv_buf5 phi3 lo4 lo4_b lo41b lo41 pfal_not_buff
+ xinv_buf5 phi3 lo4 lo4_b lo41b lo41 pfal_not_buff
+ xinv_buf6 phi3 lo5 lo5_b lo51b lo51 pfal_not_buff
+ xinv_buf6 phi3 lo5 lo5_b lo51b lo51 pfal_not_buff
+ xinv_buf7 phi3 lo6 lo6_b lo61b lo61 pfal_not_buff
+ xinv_buf7 phi3 lo6 lo6_b lo61b lo61 pfal_not_buff
+ xinv_buf8 phi3 lo7 lo7_b lo71b lo71 pfal_not_buff
+ xinv_buf8 phi3 lo7 lo7_b lo71b lo71 pfal_not_buff
+ xinv12 phi3 s22 s22b s23b s23 pfal_not_buff
+ xinv12 phi3 s22 s22b s23b s23 pfal_not_buff
+ ***********************************************************************************************
+ ***********************************************************************************************
+
+ ****************************buffer logical 2st stage***********************************************
+ xinv_buf9 phi4 lo01 lo01b lo02b lo02 pfal_not_buff
+ xinv_buf10 phi4 lo11 lo11b lo12b lo12 pfal_not_buff
+ xinv_buf10 phi4 lo11 lo11b lo12b lo12 pfal_not_buff
+ xinv_buf11 phi4 lo21 lo21b lo22b lo22 pfal_not_buff
+ xinv_buf11 phi4 lo21 lo21b lo22b lo22 pfal_not_buff
+ xinv_buf12 phi4 lo31 lo31b lo32b lo32 pfal_not_buff
+ xinv_buf12 phi4 lo31 lo31b lo32b lo32 pfal_not_buff
+ xinv_buf13 phi4 lo41 lo41b lo42b lo42 pfal_not_buff
+ xinv_buf13 phi4 lo41 lo41b lo42b lo42 pfal_not_buff
+ xinv_buf14 phi4 lo51 lo51b lo52b lo52 pfal_not_buff
+ xinv_buf14 phi4 lo51 lo51b lo52b lo52 pfal_not_buff
+ xinv_buf15 phi4 lo61 lo61b lo62b lo62 pfal_not_buff
+ xinv_buf15 phi4 lo61 lo61b lo62b lo62 pfal_not_buff
+ xinv_buf16 phi4 lo71 lo71b lo72b lo72 pfal_not_buff
+ xinv_buf16 phi4 lo71 lo71b lo72b lo72 pfal_not_buff
+ xinv13 phi4 s23 s23b s24b s24 pfal_not_buff
+ xinv13 phi4 s23 s23b s24b s24 pfal_not_buff
+ ***********************************************************************************************
+ ***********************************************************************************************
+
+ ****************************buffer logical 3st stage***********************************************
+ xinv_buf17 phi1 lo02 lo02b lo03b lo03 pfal_not_buff
+ xinv_buf18 phi1 lo12 lo12b lo13b lo13 pfal_not_buff
+ xinv_buf18 phi1 lo12 lo12b lo13b lo13 pfal_not_buff
+ xinv_buf19 phi1 lo22 lo22b lo23b lo23 pfal_not_buff
+ xinv_buf19 phi1 lo22 lo22b lo23b lo23 pfal_not_buff
+ xinv_buf20 phi1 lo32 lo32b lo33b lo33 pfal_not_buff
+ xinv_buf20 phi1 lo32 lo32b lo33b lo33 pfal_not_buff
+ xinv_buf21 phi1 lo42 lo42b lo43b lo43 pfal_not_buff
+ xinv_buf21 phi1 lo42 lo42b lo43b lo43 pfal_not_buff
+ xinv_buf22 phi1 lo52 lo52b lo53b lo53 pfal_not_buff
+ xinv_buf22 phi1 lo52 lo52b lo53b lo53 pfal_not_buff
+ xinv_buf23 phi1 lo62 lo62b lo63b lo63 pfal_not_buff
+ xinv_buf23 phi1 lo62 lo62b lo63b lo63 pfal_not_buff
+ xinv_buf24 phi1 lo72 lo72b lo73b lo73 pfal_not_buff
+ xinv_buf24 phi1 lo72 lo72b lo73b lo73 pfal_not_buff
+ xinv14 phi1 s24 s24b s25b s25 pfal_not_buff
+ xinv14 phi1 s24 s24b s25b s25 pfal_not_buff
+ ***********************************************************************************************
+ ***********************************************************************************************
+
+ ****************************buffer logical 4st stage***********************************************
+ xinv_buf25 phi2 lo03 lo03b lo04b lo04 pfal_not_buff
+ xinv_buf26 phi2 lo13 lo13b lo14b lo14 pfal_not_buff
+ xinv_buf26 phi2 lo13 lo13b lo14b lo14 pfal_not_buff
+ xinv_buf27 phi2 lo23 lo23b lo24b lo24 pfal_not_buff
+ xinv_buf27 phi2 lo23 lo23b lo24b lo24 pfal_not_buff
+ xinv_buf28 phi2 lo33 lo33b lo34b lo34 pfal_not_buff
+ xinv_buf28 phi2 lo33 lo33b lo34b lo34 pfal_not_buff
+ xinv_buf29 phi2 lo43 lo43b lo44b lo44 pfal_not_buff
+ xinv_buf29 phi2 lo43 lo43b lo44b lo44 pfal_not_buff
+ xinv_buf30 phi2 lo53 lo53b lo54b lo54 pfal_not_buff
+ xinv_buf30 phi2 lo53 lo53b lo54b lo54 pfal_not_buff
+ xinv_buf31 phi2 lo63 lo63b lo64b lo64 pfal_not_buff
+ xinv_buf31 phi2 lo63 lo63b lo64b lo64 pfal_not_buff
+ xinv_buf32 phi2 lo73 lo73b lo74b lo74 pfal_not_buff
+ xinv_buf32 phi2 lo73 lo73b lo74b lo74 pfal_not_buff
+ xinv15 phi2 s25 s25b s26b s26 pfal_not_buff
+ xinv15 phi2 s25 s25b s26b s26 pfal_not_buff
+ ***********************************************************************************************
+ ***********************************************************************************************
+
+
+ ****************************buffer logical 5st stage***********************************************
+ xinv_buf33 phi3 lo04 lo04b lo05b lo05 pfal_not_buff
+ xinv_buf34 phi3 lo14 lo14b lo15b lo15 pfal_not_buff
+ xinv_buf34 phi3 lo14 lo14b lo15b lo15 pfal_not_buff
+ xinv_buf35 phi3 lo24 lo24b lo25b lo25 pfal_not_buff
+ xinv_buf35 phi3 lo24 lo24b lo25b lo25 pfal_not_buff
+ xinv_buf36 phi3 lo34 lo34b lo35b lo35 pfal_not_buff
+ xinv_buf36 phi3 lo34 lo34b lo35b lo35 pfal_not_buff
+ xinv_buf37 phi3 lo44 lo44b lo45b lo45 pfal_not_buff
+ xinv_buf37 phi3 lo44 lo44b lo45b lo45 pfal_not_buff
+ xinv_buf38 phi3 lo54 lo54b lo55b lo55 pfal_not_buff
+ xinv_buf38 phi3 lo54 lo54b lo55b lo55 pfal_not_buff
+ xinv_buf39 phi3 lo64 lo64b lo65b lo65 pfal_not_buff
+ xinv_buf39 phi3 lo64 lo64b lo65b lo65 pfal_not_buff
+ xinv_buf40 phi3 lo74 lo74b lo75b lo75 pfal_not_buff
+ xinv_buf40 phi3 lo74 lo74b lo75b lo75 pfal_not_buff
+ xinv16 phi3 s26 s26b s27b s27 pfal_not_buff
+ xinv16 phi3 s26 s26b s27b s27 pfal_not_buff
+ ***********************************************************************************************
+ ***********************************************************************************************
+
+ ****************************buffer logical 6st stage***********************************************
+ xinv_buf41 phi4 lo05 lo05b lo06b lo06 pfal_not_buff
+ xinv_buf42 phi4 lo15 lo15b lo16b lo16 pfal_not_buff
+ xinv_buf42 phi4 lo15 lo15b lo16b lo16 pfal_not_buff
+ xinv_buf43 phi4 lo25 lo25b lo26b lo26 pfal_not_buff
+ xinv_buf43 phi4 lo25 lo25b lo26b lo26 pfal_not_buff
+ xinv_buf44 phi4 lo35 lo35b lo36b lo36 pfal_not_buff
+ xinv_buf44 phi4 lo35 lo35b lo36b lo36 pfal_not_buff
+ xinv_buf45 phi4 lo45 lo45b lo46b lo46 pfal_not_buff
+ xinv_buf45 phi4 lo45 lo45b lo46b lo46 pfal_not_buff
+ xinv_buf46 phi4 lo55 lo55b lo56b lo56 pfal_not_buff
+ xinv_buf46 phi4 lo55 lo55b lo56b lo56 pfal_not_buff
+ xinv_buf47 phi4 lo65 lo65b lo66b lo66 pfal_not_buff
+ xinv_buf47 phi4 lo65 lo65b lo66b lo66 pfal_not_buff
+ xinv_buf48 phi4 lo75 lo75b lo76b lo76 pfal_not_buff
+ xinv_buf48 phi4 lo75 lo75b lo76b lo76 pfal_not_buff
+ xinv17 phi4 s27 s27b s28b s28 pfal_not_buff
+ xinv17 phi4 s27 s27b s28b s28 pfal_not_buff
+ ***********************************************************************************************
+ ***********************************************************************************************
+
+ ****************************buffer logical 7st stage***********************************************
+ xinv_buf49 phi1 lo06 lo06b lo07b lo07 pfal_not_buff
+ xinv_buf50 phi1 lo16 lo16b lo17b lo17 pfal_not_buff
+ xinv_buf50 phi1 lo16 lo16b lo17b lo17 pfal_not_buff
+ xinv_buf51 phi1 lo26 lo26b lo27b lo27 pfal_not_buff
+ xinv_buf51 phi1 lo26 lo26b lo27b lo27 pfal_not_buff
+ xinv_buf52 phi1 lo36 lo36b lo37b lo37 pfal_not_buff
+ xinv_buf52 phi1 lo36 lo36b lo37b lo37 pfal_not_buff
+ xinv_buf53 phi1 lo46 lo46b lo47b lo47 pfal_not_buff
+ xinv_buf53 phi1 lo46 lo46b lo47b lo47 pfal_not_buff
+ xinv_buf54 phi1 lo56 lo56b lo57b lo57 pfal_not_buff
+ xinv_buf54 phi1 lo56 lo56b lo57b lo57 pfal_not_buff
+ xinv_buf55 phi1 lo66 lo66b lo67b lo67 pfal_not_buff
+ xinv_buf55 phi1 lo66 lo66b lo67b lo67 pfal_not_buff
+ xinv_buf56 phi1 lo76 lo76b lo77b lo77 pfal_not_buff
+ xinv_buf56 phi1 lo76 lo76b lo77b lo77 pfal_not_buff
+ xinv18 phi1 s28 s28b s29b s29 pfal_not_buff
+ xinv18 phi1 s28 s28b s29b s29 pfal_not_buff
+ ***********************************************************************************************
+ ***********************************************************************************************
+
+ *************final output selection stage with phi3 clk**************************************
+ xmux17 phi2 s29 ar0 lo07 s29b ar0_b lo07b out0 out0_b pfal_mux2_1
+ xmux18 phi2 s29 ar1 lo17 s29b ar1_b lo17b out1 out1_b pfal_mux2_1
+ xmux18 phi2 s29 ar1 lo17 s29b ar1_b lo17b out1 out1_b pfal_mux2_1
+ xmux19 phi2 s29 ar2 lo27 s29b ar2_b lo27b out2 out2_b pfal_mux2_1
+ xmux19 phi2 s29 ar2 lo27 s29b ar2_b lo27b out2 out2_b pfal_mux2_1
+ xmux20 phi2 s29 ar3 lo37 s29b ar3_b lo37b out3 out3_b pfal_mux2_1
+ xmux20 phi2 s29 ar3 lo37 s29b ar3_b lo37b out3 out3_b pfal_mux2_1
+ xmux21 phi2 s29 ar4 lo47 s29b ar4_b lo47b out4 out4_b pfal_mux2_1
+ xmux21 phi2 s29 ar4 lo47 s29b ar4_b lo47b out4 out4_b pfal_mux2_1
+ xmux22 phi2 s29 ar5 lo57 s29b ar5_b lo57b out5 out5_b pfal_mux2_1
+ xmux22 phi2 s29 ar5 lo57 s29b ar5_b lo57b out5 out5_b pfal_mux2_1
+ xmux23 phi2 s29 ar6 lo67 s29b ar6_b lo67b out6 out6_b pfal_mux2_1
+ xmux23 phi2 s29 ar6 lo67 s29b ar6_b lo67b out6 out6_b pfal_mux2_1
+ xmux24 phi2 s29 ar7 lo77 s29b ar7_b lo77b out7 out7_b pfal_mux2_1
+ xmux24 phi2 s29 ar7 lo77 s29b ar7_b lo77b out7 out7_b pfal_mux2_1
+ xinv_buf57 phi2 cout1 cout_b1 cout_b cout pfal_not_buff
+ xinv_buf57 phi2 cout1 cout_b1 cout_b cout pfal_not_buff
+ *********************************************************************************************
+ *********************************************************************************************
+
+ .ends pfal_alu_rca_con
+
+
+ vclk1 vclk1 0 pulse 0 .5 1n 1n 1n 2n 6.0n
+ vclk2 vclk2 0 pulse 0 .5 2.5n 1n 1n 2n 6.0n
+ vclk2 vclk2 0 pulse 0 .5 2.5n 1n 1n 2n 6.0n
+ vclk3 vclk3 0 pulse 0 0.5 4n 1n 1n 2n 6.0n
+ vclk3 vclk3 0 pulse 0 0.5 4n 1n 1n 2n 6.0n
+ vclk4 vclk4 0 pulse 0 0.5 5.5n 1n 1n 2n 6.0n
+ vclk4 vclk4 0 pulse 0 0.5 5.5n 1n 1n 2n 6.0n
+
+ va0 va0 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va0b va0b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va0b va0b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va1 va1 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va1 va1 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va1b va1b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va1b va1b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va2 va2 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va2 va2 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va2b va2b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va2b va2b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va3 va3 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va3 va3 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va3b va3b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va3b va3b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va4 va4 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va4 va4 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va4b va4b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va4b va4b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va5 va5 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va5 va5 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va5b va5b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va5b va5b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va6 va6 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va6 va6 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va6b va6b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va6b va6b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va7 va7 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va7 va7 gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ va7b va7b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ va7b va7b gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+
+ vb0 vb0 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb0b vb0b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb0b vb0b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb1 vb1 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb1 vb1 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb1b vb1b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb1b vb1b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb2 vb2 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb2 vb2 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb2b vb2b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb2b vb2b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb3 vb3 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb3 vb3 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb3b vb3b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb3b vb3b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb4 vb4 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb4 vb4 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb4b vb4b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb4b vb4b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb5 vb5 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb5 vb5 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb5b vb5b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb5b vb5b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb6 vb6 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb6 vb6 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb6b vb6b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb6b vb6b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb7 vb7 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb7 vb7 gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb7b vb7b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vb7b vb7b gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+
+
+ vcin vcin gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5) 
+ vcinb vcinb gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5)
+ vcinb vcinb gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5)
+
+ vs2 vs2 gnd pat (.5 0 0 0.01n 0.01n 3n b10101010100000000000 r=3)
+ vs2b vs2b gnd pat (.5 0 0 0.01n 0.01n 3n b00000000001010101010 r=3)
+ vs2b vs2b gnd pat (.5 0 0 0.01n 0.01n 3n b00000000001010101010 r=3)
+ vs1 vs1 gnd pat (.5 0 0 0.01n 0.01n 3n b1010100000 r=5)
+ vs1 vs1 gnd pat (.5 0 0 0.01n 0.01n 3n b1010100000 r=5)
+ vs1b vs1b gnd pat (.5 0 0 0.01n 0.01n 3n b0000001010 r=5)
+ vs1b vs1b gnd pat (.5 0 0 0.01n 0.01n 3n b0000001010 r=5)
+ vs0 vs0 gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5)
+ vs0 vs0 gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5)
+ vs0b vs0b gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5)
+ vs0b vs0b gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5)
+
+ *********instantiating***********
+ xalu1 vclk1 vclk2 vclk3 vclk4 vs2 vs1 vs0 va0 va1 va2 va3 va4 va5 va6 va7 vb0 vb1 vb2 vb3 vb4 vb5 vb6 vb7 vcin vs2b vs1b vs0b va0b va1b va2b va3b va4b va5b va6b va7b vb0b vb1b vb2b vb3b vb4b vb5b vb6b vb7b vcinb s0 s1 s2 s3 s4 s5 s6 s7 cout s0_b s1_b s2_b s3_b s4_b s5_b s6_b s7_b cout_b pfal_alu_rca_con
+
+ * transient analysis *
+
+ * transient analysis *
+ .op
+ .tran 1n 51n
+ .tran 1n 51n
+ ************total power calculation(op =high)*****************
+ ************total power calculation(op =high)*****************
+ .meas tran itotal1 avg i(vclk1) from=8ns to=50ns
+ .meas tran vtotal1 avg v(vclk1) from=8ns to=50ns
+ .meas tran vtotal1 avg v(vclk1) from=8ns to=50ns
+ .meas etotal1 param='-vtotal1*itotal1'
+ .meas etotal1 param='-vtotal1*itotal1'
+ .meas tran p_avg1 avg p(vclk1) from=8n to=50n
+ .meas tran p_avg1 avg p(vclk1) from=8n to=50n
+ ************************************************** ********
+ ************************************************** ********
+ ************total power calculation(op =high)*****************
+ .meas tran itotal2 avg i(vclk2) from=8ns to=50ns
+ .meas tran vtotal2 avg v(vclk2) from=8ns to=50ns
+ .meas tran vtotal2 avg v(vclk2) from=8ns to=50ns
+ .meas etotal2 param='-vtotal2*itotal2'
+ .meas etotal2 param='-vtotal2*itotal2'
+ .meas tran p_avg2 avg p(vclk2) from=8n to=50n
+ .meas tran p_avg2 avg p(vclk2) from=8n to=50n
+ ************************************************** ********
+ ************************************************** ********
+ ************total power calculation(op =high)*****************
+ .meas tran itotal3 avg i(vclk3) from=8ns to=50ns
+ .meas tran vtotal3 avg v(vclk3) from=8ns to=50ns
+ .meas tran vtotal3 avg v(vclk3) from=8ns to=50ns
+ .meas etotal3 param='-vtotal3*itotal3'
+ .meas etotal3 param='-vtotal3*itotal3'
+ .meas tran p_avg3 avg p(vclk3) from=8n to=50n
+ .meas tran p_avg3 avg p(vclk3) from=8n to=50n
+ ************************************************** ********
+ ************************************************** ********
+ ************total power calculation(op =high)*****************
+ .meas tran itotal4 avg i(vclk4) from=8ns to=50ns
+ .meas tran vtotal4 avg v(vclk4) from=8ns to=50ns
+ .meas tran vtotal4 avg v(vclk4) from=8ns to=50ns
+ .meas etotal4 param='-vtotal4*itotal4'
+ .meas etotal4 param='-vtotal4*itotal4'
+ .meas tran p_avg4 avg p(vclk4) from=8n to=50n
+ .meas tran p_avg4 avg p(vclk4) from=8n to=50n
+ ************************************************** ********
+ ************************************************** ********
+ .meas etotal param = 'etotal1+etotal2+etotal3+etotal4'
+ .end 
+ .end 
+
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:27:39 02/10/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  circuit name directory                                               
+ ******  
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xalu1.                          pfal_alu_rca_con   1.00 
+        2 xalu1.xmux1.                    pfal_mux4_1        1.00 
+        3 xalu1.xmux2.                    pfal_mux4_1        1.00 
+        4 xalu1.xmux3.                    pfal_mux4_1        1.00 
+        5 xalu1.xmux4.                    pfal_mux4_1        1.00 
+        6 xalu1.xmux5.                    pfal_mux4_1        1.00 
+        7 xalu1.xmux6.                    pfal_mux4_1        1.00 
+        8 xalu1.xmux7.                    pfal_mux4_1        1.00 
+        9 xalu1.xmux8.                    pfal_mux4_1        1.00 
+       10 xalu1.xinv1.                    pfal_not_buff      1.00 
+       11 xalu1.xinv2.                    pfal_not_buff      1.00 
+       12 xalu1.xinv3.                    pfal_not_buff      1.00 
+       13 xalu1.xinv4.                    pfal_not_buff      1.00 
+       14 xalu1.xinv5.                    pfal_not_buff      1.00 
+       15 xalu1.xinv6.                    pfal_not_buff      1.00 
+       16 xalu1.xinv7.                    pfal_not_buff      1.00 
+       17 xalu1.xinv8.                    pfal_not_buff      1.00 
+       18 xalu1.xinv9.                    pfal_not_buff      1.00 
+       19 xalu1.xinv10.                   pfal_not_buff      1.00 
+       20 xalu1.xpa1.                     ripple_carry_adder
+                                                                 1.00 
+       21 xalu1.xnand1.                   pfal_nand_and      1.00 
+       22 xalu1.xnand2.                   pfal_nand_and      1.00 
+       23 xalu1.xnand3.                   pfal_nand_and      1.00 
+       24 xalu1.xnand4.                   pfal_nand_and      1.00 
+       25 xalu1.xnand5.                   pfal_nand_and      1.00 
+       26 xalu1.xnand6.                   pfal_nand_and      1.00 
+       27 xalu1.xnand7.                   pfal_nand_and      1.00 
+       28 xalu1.xnand8.                   pfal_nand_and      1.00 
+       29 xalu1.xnor1.                    pfal_nor_or        1.00 
+       30 xalu1.xnor2.                    pfal_nor_or        1.00 
+       31 xalu1.xnor3.                    pfal_nor_or        1.00 
+       32 xalu1.xnor4.                    pfal_nor_or        1.00 
+       33 xalu1.xnor5.                    pfal_nor_or        1.00 
+       34 xalu1.xnor6.                    pfal_nor_or        1.00 
+       35 xalu1.xnor7.                    pfal_nor_or        1.00 
+       36 xalu1.xnor8.                    pfal_nor_or        1.00 
+       37 xalu1.xxor1.                    pfal_xor_xnor      1.00 
+       38 xalu1.xxor2.                    pfal_xor_xnor      1.00 
+       39 xalu1.xxor3.                    pfal_xor_xnor      1.00 
+       40 xalu1.xxor4.                    pfal_xor_xnor      1.00 
+       41 xalu1.xxor5.                    pfal_xor_xnor      1.00 
+       42 xalu1.xxor6.                    pfal_xor_xnor      1.00 
+       43 xalu1.xxor7.                    pfal_xor_xnor      1.00 
+       44 xalu1.xxor8.                    pfal_xor_xnor      1.00 
+       45 xalu1.xinv19.                   pfal_not_buff      1.00 
+       46 xalu1.xinv20.                   pfal_not_buff      1.00 
+       47 xalu1.xmux9.                    pfal_mux4_1        1.00 
+       48 xalu1.xmux10.                   pfal_mux4_1        1.00 
+       49 xalu1.xmux11.                   pfal_mux4_1        1.00 
+       50 xalu1.xmux12.                   pfal_mux4_1        1.00 
+       51 xalu1.xmux13.                   pfal_mux4_1        1.00 
+       52 xalu1.xmux14.                   pfal_mux4_1        1.00 
+       53 xalu1.xmux15.                   pfal_mux4_1        1.00 
+       54 xalu1.xmux16.                   pfal_mux4_1        1.00 
+       55 xalu1.xinv11.                   pfal_not_buff      1.00 
+       56 xalu1.xinv_buf1.                pfal_not_buff      1.00 
+       57 xalu1.xinv_buf2.                pfal_not_buff      1.00 
+       58 xalu1.xinv_buf3.                pfal_not_buff      1.00 
+       59 xalu1.xinv_buf4.                pfal_not_buff      1.00 
+       60 xalu1.xinv_buf5.                pfal_not_buff      1.00 
+       61 xalu1.xinv_buf6.                pfal_not_buff      1.00 
+       62 xalu1.xinv_buf7.                pfal_not_buff      1.00 
+       63 xalu1.xinv_buf8.                pfal_not_buff      1.00 
+       64 xalu1.xinv12.                   pfal_not_buff      1.00 
+       65 xalu1.xinv_buf9.                pfal_not_buff      1.00 
+       66 xalu1.xinv_buf10.               pfal_not_buff      1.00 
+       67 xalu1.xinv_buf11.               pfal_not_buff      1.00 
+       68 xalu1.xinv_buf12.               pfal_not_buff      1.00 
+       69 xalu1.xinv_buf13.               pfal_not_buff      1.00 
+       70 xalu1.xinv_buf14.               pfal_not_buff      1.00 
+       71 xalu1.xinv_buf15.               pfal_not_buff      1.00 
+       72 xalu1.xinv_buf16.               pfal_not_buff      1.00 
+       73 xalu1.xinv13.                   pfal_not_buff      1.00 
+       74 xalu1.xinv_buf17.               pfal_not_buff      1.00 
+       75 xalu1.xinv_buf18.               pfal_not_buff      1.00 
+       76 xalu1.xinv_buf19.               pfal_not_buff      1.00 
+       77 xalu1.xinv_buf20.               pfal_not_buff      1.00 
+       78 xalu1.xinv_buf21.               pfal_not_buff      1.00 
+       79 xalu1.xinv_buf22.               pfal_not_buff      1.00 
+       80 xalu1.xinv_buf23.               pfal_not_buff      1.00 
+       81 xalu1.xinv_buf24.               pfal_not_buff      1.00 
+       82 xalu1.xinv14.                   pfal_not_buff      1.00 
+       83 xalu1.xinv_buf25.               pfal_not_buff      1.00 
+       84 xalu1.xinv_buf26.               pfal_not_buff      1.00 
+       85 xalu1.xinv_buf27.               pfal_not_buff      1.00 
+       86 xalu1.xinv_buf28.               pfal_not_buff      1.00 
+       87 xalu1.xinv_buf29.               pfal_not_buff      1.00 
+       88 xalu1.xinv_buf30.               pfal_not_buff      1.00 
+       89 xalu1.xinv_buf31.               pfal_not_buff      1.00 
+       90 xalu1.xinv_buf32.               pfal_not_buff      1.00 
+       91 xalu1.xinv15.                   pfal_not_buff      1.00 
+       92 xalu1.xinv_buf33.               pfal_not_buff      1.00 
+       93 xalu1.xinv_buf34.               pfal_not_buff      1.00 
+       94 xalu1.xinv_buf35.               pfal_not_buff      1.00 
+       95 xalu1.xinv_buf36.               pfal_not_buff      1.00 
+       96 xalu1.xinv_buf37.               pfal_not_buff      1.00 
+       97 xalu1.xinv_buf38.               pfal_not_buff      1.00 
+       98 xalu1.xinv_buf39.               pfal_not_buff      1.00 
+       99 xalu1.xinv_buf40.               pfal_not_buff      1.00 
+      100 xalu1.xinv16.                   pfal_not_buff      1.00 
+      101 xalu1.xinv_buf41.               pfal_not_buff      1.00 
+      102 xalu1.xinv_buf42.               pfal_not_buff      1.00 
+      103 xalu1.xinv_buf43.               pfal_not_buff      1.00 
+      104 xalu1.xinv_buf44.               pfal_not_buff      1.00 
+      105 xalu1.xinv_buf45.               pfal_not_buff      1.00 
+      106 xalu1.xinv_buf46.               pfal_not_buff      1.00 
+      107 xalu1.xinv_buf47.               pfal_not_buff      1.00 
+      108 xalu1.xinv_buf48.               pfal_not_buff      1.00 
+      109 xalu1.xinv17.                   pfal_not_buff      1.00 
+      110 xalu1.xinv_buf49.               pfal_not_buff      1.00 
+      111 xalu1.xinv_buf50.               pfal_not_buff      1.00 
+      112 xalu1.xinv_buf51.               pfal_not_buff      1.00 
+      113 xalu1.xinv_buf52.               pfal_not_buff      1.00 
+      114 xalu1.xinv_buf53.               pfal_not_buff      1.00 
+      115 xalu1.xinv_buf54.               pfal_not_buff      1.00 
+      116 xalu1.xinv_buf55.               pfal_not_buff      1.00 
+      117 xalu1.xinv_buf56.               pfal_not_buff      1.00 
+      118 xalu1.xinv18.                   pfal_not_buff      1.00 
+      119 xalu1.xmux17.                   pfal_mux2_1        1.00 
+      120 xalu1.xmux18.                   pfal_mux2_1        1.00 
+      121 xalu1.xmux19.                   pfal_mux2_1        1.00 
+      122 xalu1.xmux20.                   pfal_mux2_1        1.00 
+      123 xalu1.xmux21.                   pfal_mux2_1        1.00 
+      124 xalu1.xmux22.                   pfal_mux2_1        1.00 
+      125 xalu1.xmux23.                   pfal_mux2_1        1.00 
+      126 xalu1.xmux24.                   pfal_mux2_1        1.00 
+      127 xalu1.xinv_buf57.               pfal_not_buff      1.00 
+      412 xalu1.xpa1.xadder1.             full_adder         1.00 
+      413 xalu1.xpa1.xinv_buf1.           pfal_not_buff      1.00 
+      414 xalu1.xpa1.xinv_buf2.           pfal_not_buff      1.00 
+      415 xalu1.xpa1.xinv_buf3.           pfal_not_buff      1.00 
+      416 xalu1.xpa1.xinv_buf4.           pfal_not_buff      1.00 
+      417 xalu1.xpa1.xinv_buf5.           pfal_not_buff      1.00 
+      418 xalu1.xpa1.xinv_buf6.           pfal_not_buff      1.00 
+      419 xalu1.xpa1.xinv_buf7.           pfal_not_buff      1.00 
+      420 xalu1.xpa1.xinv_buf8.           pfal_not_buff      1.00 
+      421 xalu1.xpa1.xinv_buf9.           pfal_not_buff      1.00 
+      422 xalu1.xpa1.xinv_buf10.          pfal_not_buff      1.00 
+      423 xalu1.xpa1.xinv_buf11.          pfal_not_buff      1.00 
+      424 xalu1.xpa1.xinv_buf12.          pfal_not_buff      1.00 
+      425 xalu1.xpa1.xinv_buf13.          pfal_not_buff      1.00 
+      426 xalu1.xpa1.xinv_buf14.          pfal_not_buff      1.00 
+      427 xalu1.xpa1.xadder2.             full_adder         1.00 
+      428 xalu1.xpa1.xinv_buf15.          pfal_not_buff      1.00 
+      429 xalu1.xpa1.xinv_buf16.          pfal_not_buff      1.00 
+      430 xalu1.xpa1.xinv_buf17.          pfal_not_buff      1.00 
+      431 xalu1.xpa1.xinv_buf18.          pfal_not_buff      1.00 
+      432 xalu1.xpa1.xinv_buf19.          pfal_not_buff      1.00 
+      433 xalu1.xpa1.xinv_buf20.          pfal_not_buff      1.00 
+      434 xalu1.xpa1.xinv_buf21.          pfal_not_buff      1.00 
+      435 xalu1.xpa1.xinv_buf22.          pfal_not_buff      1.00 
+      436 xalu1.xpa1.xinv_buf23.          pfal_not_buff      1.00 
+      437 xalu1.xpa1.xinv_buf24.          pfal_not_buff      1.00 
+      438 xalu1.xpa1.xinv_buf25.          pfal_not_buff      1.00 
+      439 xalu1.xpa1.xinv_buf26.          pfal_not_buff      1.00 
+      440 xalu1.xpa1.xinv_buf27.          pfal_not_buff      1.00 
+      441 xalu1.xpa1.xadder3.             full_adder         1.00 
+      442 xalu1.xpa1.xinv_buf28.          pfal_not_buff      1.00 
+      443 xalu1.xpa1.xinv_buf29.          pfal_not_buff      1.00 
+      444 xalu1.xpa1.xinv_buf30.          pfal_not_buff      1.00 
+      445 xalu1.xpa1.xinv_buf31.          pfal_not_buff      1.00 
+      446 xalu1.xpa1.xinv_buf32.          pfal_not_buff      1.00 
+      447 xalu1.xpa1.xinv_buf33.          pfal_not_buff      1.00 
+      448 xalu1.xpa1.xinv_buf34.          pfal_not_buff      1.00 
+      449 xalu1.xpa1.xinv_buf35.          pfal_not_buff      1.00 
+      450 xalu1.xpa1.xinv_buf36.          pfal_not_buff      1.00 
+      451 xalu1.xpa1.xinv_buf37.          pfal_not_buff      1.00 
+      452 xalu1.xpa1.xinv_buf38.          pfal_not_buff      1.00 
+      453 xalu1.xpa1.xinv_buf39.          pfal_not_buff      1.00 
+      454 xalu1.xpa1.xadder4.             full_adder         1.00 
+      455 xalu1.xpa1.xinv_buf40.          pfal_not_buff      1.00 
+      456 xalu1.xpa1.xinv_buf41.          pfal_not_buff      1.00 
+      457 xalu1.xpa1.xinv_buf42.          pfal_not_buff      1.00 
+      458 xalu1.xpa1.xinv_buf43.          pfal_not_buff      1.00 
+      459 xalu1.xpa1.xinv_buf44.          pfal_not_buff      1.00 
+      460 xalu1.xpa1.xinv_buf45.          pfal_not_buff      1.00 
+      461 xalu1.xpa1.xinv_buf46.          pfal_not_buff      1.00 
+      462 xalu1.xpa1.xinv_buf47.          pfal_not_buff      1.00 
+      463 xalu1.xpa1.xinv_buf48.          pfal_not_buff      1.00 
+      464 xalu1.xpa1.xinv_buf49.          pfal_not_buff      1.00 
+      465 xalu1.xpa1.xinv_buf50.          pfal_not_buff      1.00 
+      466 xalu1.xpa1.xadder5.             full_adder         1.00 
+      467 xalu1.xpa1.xinv_buf51.          pfal_not_buff      1.00 
+      468 xalu1.xpa1.xinv_buf52.          pfal_not_buff      1.00 
+      469 xalu1.xpa1.xinv_buf53.          pfal_not_buff      1.00 
+      470 xalu1.xpa1.xinv_buf54.          pfal_not_buff      1.00 
+      471 xalu1.xpa1.xinv_buf55.          pfal_not_buff      1.00 
+      472 xalu1.xpa1.xinv_buf56.          pfal_not_buff      1.00 
+      473 xalu1.xpa1.xinv_buf57.          pfal_not_buff      1.00 
+      474 xalu1.xpa1.xinv_buf58.          pfal_not_buff      1.00 
+      475 xalu1.xpa1.xinv_buf59.          pfal_not_buff      1.00 
+      476 xalu1.xpa1.xinv_buf60.          pfal_not_buff      1.00 
+      477 xalu1.xpa1.xadder6.             full_adder         1.00 
+      478 xalu1.xpa1.xinv_buf61.          pfal_not_buff      1.00 
+      479 xalu1.xpa1.xinv_buf62.          pfal_not_buff      1.00 
+      480 xalu1.xpa1.xinv_buf63.          pfal_not_buff      1.00 
+      481 xalu1.xpa1.xinv_buf64.          pfal_not_buff      1.00 
+      482 xalu1.xpa1.xinv_buf65.          pfal_not_buff      1.00 
+      483 xalu1.xpa1.xinv_buf66.          pfal_not_buff      1.00 
+      484 xalu1.xpa1.xinv_buf67.          pfal_not_buff      1.00 
+      485 xalu1.xpa1.xinv_buf68.          pfal_not_buff      1.00 
+      486 xalu1.xpa1.xinv_buf69.          pfal_not_buff      1.00 
+      487 xalu1.xpa1.xadder7.             full_adder         1.00 
+      488 xalu1.xpa1.xinv_buf70.          pfal_not_buff      1.00 
+      489 xalu1.xpa1.xinv_buf71.          pfal_not_buff      1.00 
+      490 xalu1.xpa1.xinv_buf72.          pfal_not_buff      1.00 
+      491 xalu1.xpa1.xinv_buf73.          pfal_not_buff      1.00 
+      492 xalu1.xpa1.xinv_buf74.          pfal_not_buff      1.00 
+      493 xalu1.xpa1.xinv_buf75.          pfal_not_buff      1.00 
+      494 xalu1.xpa1.xinv_buf76.          pfal_not_buff      1.00 
+      495 xalu1.xpa1.xinv_buf77.          pfal_not_buff      1.00 
+      496 xalu1.xpa1.xadder8.             full_adder         1.00 
+      497 xalu1.xpa1.xinv_buf78.          pfal_not_buff      1.00 
+      498 xalu1.xpa1.xinv_buf79.          pfal_not_buff      1.00 
+      499 xalu1.xpa1.xinv_buf80.          pfal_not_buff      1.00 
+      500 xalu1.xpa1.xinv_buf81.          pfal_not_buff      1.00 
+      501 xalu1.xpa1.xinv_buf82.          pfal_not_buff      1.00 
+      502 xalu1.xpa1.xinv_buf83.          pfal_not_buff      1.00 
+      503 xalu1.xpa1.xinv_buf84.          pfal_not_buff      1.00 
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:vclk1               new dc=  0.0000D+00
+
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:vclk2               new dc=  0.0000D+00
+
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:vclk3               new dc=  0.0000D+00
+
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:vclk4               new dc=  0.0000D+00
+
+  Opening plot unit= 79
+ file=f:\major_project\codes\gnrfet\adiabatic_logic\pfal\alu\alu_rca_con\init.p
+
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:27:39 02/10/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  operating point information      tnom=  25.000 temp=  25.000         
+ ******  
+ ***** operating point status is all       simulation time is     0.     
+       node    =voltage         node    =voltage         node    =voltage
+
+ +   0:cout    = 1.052e-10    0:cout_b  = 1.053e-10    0:s0      = 3.166e-10
+ +   0:s0_b    = 3.157e-10    0:s1      = 3.160e-10    0:s1_b    = 3.163e-10
+ +   0:s2      = 3.165e-10    0:s2_b    = 3.159e-10    0:s3      = 3.158e-10
+ +   0:s3_b    = 3.159e-10    0:s4      = 3.162e-10    0:s4_b    = 3.162e-10
+ +   0:s5      = 3.159e-10    0:s5_b    = 3.160e-10    0:s6      = 3.164e-10
+ +   0:s6_b    = 3.159e-10    0:s7      = 3.160e-10    0:s7_b    = 3.160e-10
+ +   0:va0     = 5.000e-01    0:va0b    =   0.         0:va1     = 5.000e-01
+ +   0:va1b    =   0.         0:va2     = 5.000e-01    0:va2b    =   0.     
+ +   0:va3     = 5.000e-01    0:va3b    =   0.         0:va4     = 5.000e-01
+ +   0:va4b    =   0.         0:va5     = 5.000e-01    0:va5b    =   0.     
+ +   0:va6     = 5.000e-01    0:va6b    =   0.         0:va7     = 5.000e-01
+ +   0:va7b    =   0.         0:vb0     =   0.         0:vb0b    = 5.000e-01
+ +   0:vb1     =   0.         0:vb1b    = 5.000e-01    0:vb2     =   0.     
+ +   0:vb2b    = 5.000e-01    0:vb3     =   0.         0:vb3b    = 5.000e-01
+ +   0:vb4     =   0.         0:vb4b    = 5.000e-01    0:vb5     =   0.     
+ +   0:vb5b    = 5.000e-01    0:vb6     =   0.         0:vb6b    = 5.000e-01
+ +   0:vb7     =   0.         0:vb7b    = 5.000e-01    0:vcin    =   0.     
+ +   0:vcinb   = 5.000e-01    0:vclk1   =   0.         0:vclk2   =   0.     
+ +   0:vclk3   =   0.         0:vclk4   =   0.         0:vs0     = 5.000e-01
+ +   0:vs0b    =   0.         0:vs1     = 5.000e-01    0:vs1b    =   0.     
+ +   0:vs2     = 5.000e-01    0:vs2b    =   0.         1:and0    = 1.053e-10
+ +   1:and1    = 1.058e-10    1:and2    = 1.055e-10    1:and3    = 1.055e-10
+ +   1:and4    = 1.056e-10    1:and5    = 1.053e-10    1:and6    = 1.056e-10
+ +   1:and7    = 1.056e-10    1:ar0     = 1.056e-10    1:ar0_b   = 1.056e-10
+ +   1:ar1     = 1.055e-10    1:ar1_b   = 1.053e-10    1:ar2     = 1.058e-10
+ +   1:ar2_b   = 1.054e-10    1:ar3     = 1.055e-10    1:ar3_b   = 1.053e-10
+ +   1:ar4     = 1.053e-10    1:ar4_b   = 1.057e-10    1:ar5     = 1.052e-10
+ +   1:ar5_b   = 1.053e-10    1:ar6     = 1.053e-10    1:ar6_b   = 1.056e-10
+ +   1:ar7     = 7.446e-10    1:ar7_b   = 7.444e-10    1:cin1    = 1.056e-10
+ +   1:cin_b1  = 4.283e-15    1:cout1   = 4.657e-10    1:cout_b1 = 4.661e-10
+ +   1:lo0     =-2.163e-04    1:lo01    = 1.058e-10    1:lo01b   = 1.053e-10
+ +   1:lo02    = 1.057e-10    1:lo02b   = 1.056e-10    1:lo03    = 1.056e-10
+ +   1:lo03b   = 1.054e-10    1:lo04    = 1.054e-10    1:lo04b   = 1.053e-10
+ +   1:lo05    = 1.054e-10    1:lo05b   = 1.053e-10    1:lo06    = 1.056e-10
+ +   1:lo06b   = 1.052e-10    1:lo07    = 1.053e-10    1:lo07b   = 1.054e-10
+ +   1:lo0_b   = 2.320e-08    1:lo1     =-2.163e-04    1:lo11    = 1.056e-10
+ +   1:lo11b   = 1.054e-10    1:lo12    = 1.054e-10    1:lo12b   = 1.056e-10
+ +   1:lo13    = 1.057e-10    1:lo13b   = 1.052e-10    1:lo14    = 1.054e-10
+ +   1:lo14b   = 1.056e-10    1:lo15    = 1.054e-10    1:lo15b   = 1.056e-10
+ +   1:lo16    = 1.057e-10    1:lo16b   = 1.050e-10    1:lo17    = 1.057e-10
+ +   1:lo17b   = 1.050e-10    1:lo1_b   = 2.322e-08    1:lo2     =-2.164e-04
+ +   1:lo21    = 1.057e-10    1:lo21b   = 1.053e-10    1:lo22    = 1.054e-10
+ +   1:lo22b   = 1.053e-10    1:lo23    = 1.056e-10    1:lo23b   = 1.052e-10
+ +   1:lo24    = 1.054e-10    1:lo24b   = 1.050e-10    1:lo25    = 1.056e-10
+ +   1:lo25b   = 1.053e-10    1:lo26    = 1.053e-10    1:lo26b   = 1.055e-10
+ +   1:lo27    = 1.057e-10    1:lo27b   = 1.050e-10    1:lo2_b   = 2.323e-08
+ +   1:lo3     =-2.167e-04    1:lo31    = 1.056e-10    1:lo31b   = 1.056e-10
+ +   1:lo32    = 1.054e-10    1:lo32b   = 1.056e-10    1:lo33    = 1.057e-10
+ +   1:lo33b   = 1.056e-10    1:lo34    = 1.054e-10    1:lo34b   = 1.054e-10
+ +   1:lo35    = 1.054e-10    1:lo35b   = 1.056e-10    1:lo36    = 1.056e-10
+ +   1:lo36b   = 1.054e-10    1:lo37    = 1.056e-10    1:lo37b   = 1.056e-10
+ +   1:lo3_b   = 2.325e-08    1:lo4     =-2.163e-04    1:lo41    = 1.054e-10
+ +   1:lo41b   = 1.054e-10    1:lo42    = 1.052e-10    1:lo42b   = 1.053e-10
+ +   1:lo43    = 1.054e-10    1:lo43b   = 1.054e-10    1:lo44    = 1.052e-10
+ +   1:lo44b   = 1.052e-10    1:lo45    = 1.050e-10    1:lo45b   = 1.057e-10
+ +   1:lo46    = 1.056e-10    1:lo46b   = 1.055e-10    1:lo47    = 1.054e-10
+ +   1:lo47b   = 1.057e-10    1:lo4_b   = 2.322e-08    1:lo5     =-2.163e-04
+ +   1:lo51    = 1.060e-10    1:lo51b   = 1.052e-10    1:lo52    = 1.050e-10
+ +   1:lo52b   = 1.057e-10    1:lo53    = 1.056e-10    1:lo53b   = 1.056e-10
+ +   1:lo54    = 1.050e-10    1:lo54b   = 1.057e-10    1:lo55    = 1.054e-10
+ +   1:lo55b   = 1.052e-10    1:lo56    = 1.054e-10    1:lo56b   = 1.054e-10
+ +   1:lo57    = 1.052e-10    1:lo57b   = 1.052e-10    1:lo5_b   = 2.321e-08
+ +   1:lo6     =-2.165e-04    1:lo61    = 1.057e-10    1:lo61b   = 1.054e-10
+ +   1:lo62    = 1.057e-10    1:lo62b   = 1.054e-10    1:lo63    = 1.053e-10
+ +   1:lo63b   = 1.052e-10    1:lo64    = 1.052e-10    1:lo64b   = 1.054e-10
+ +   1:lo65    = 1.056e-10    1:lo65b   = 1.053e-10    1:lo66    = 1.057e-10
+ +   1:lo66b   = 1.050e-10    1:lo67    = 1.057e-10    1:lo67b   = 1.050e-10
+ +   1:lo6_b   = 2.323e-08    1:lo7     =-2.165e-04    1:lo71    = 1.054e-10
+ +   1:lo71b   = 1.057e-10    1:lo72    = 1.056e-10    1:lo72b   = 1.056e-10
+ +   1:lo73    = 1.056e-10    1:lo73b   = 1.054e-10    1:lo74    = 1.054e-10
+ +   1:lo74b   = 1.056e-10    1:lo75    = 1.056e-10    1:lo75b   = 1.054e-10
+ +   1:lo76    = 1.053e-10    1:lo76b   = 1.054e-10    1:lo77    = 1.052e-10
+ +   1:lo77b   = 1.056e-10    1:lo7_b   = 2.323e-08    1:nand0   = 4.266e-15
+ +   1:nand1   = 4.264e-15    1:nand2   = 4.264e-15    1:nand3   = 4.264e-15
+ +   1:nand4   = 4.221e-15    1:nand5   = 4.266e-15    1:nand6   = 4.220e-15
+ +   1:nand7   = 4.221e-15    1:nor0    =-8.964e-05    1:nor1    =-8.941e-05
+ +   1:nor2    =-8.943e-05    1:nor3    =-8.947e-05    1:nor4    =-8.944e-05
+ +   1:nor5    =-8.945e-05    1:nor6    =-8.950e-05    1:nor7    =-8.942e-05
+ +   1:op0     =-1.872e-04    1:op0_b   =-1.449e-08    1:op1     =-1.940e-04
+ +   1:op1_b   =-1.207e-08    1:op2     =-1.940e-04    1:op2_b   =-1.207e-08
+ +   1:op3     =-1.938e-04    1:op3_b   =-1.207e-08    1:op4     =-1.939e-04
+ +   1:op4_b   =-1.206e-08    1:op5     =-1.939e-04    1:op5_b   =-1.206e-08
+ +   1:op6     =-1.940e-04    1:op6_b   =-1.208e-08    1:op7     =-1.939e-04
+ +   1:op7_b   =-1.207e-08    1:opa0    = 4.283e-15    1:opa0_b  = 1.056e-10
+ +   1:opa1    = 4.261e-15    1:opa1_b  = 1.056e-10    1:opa2    = 4.266e-15
+ +   1:opa2_b  = 1.055e-10    1:opa3    = 4.266e-15    1:opa3_b  = 1.057e-10
+ +   1:opa4    = 4.226e-15    1:opa4_b  = 1.055e-10    1:opa5    = 4.226e-15
+ +   1:opa5_b  = 1.055e-10    1:opa6    = 4.226e-15    1:opa6_b  = 1.056e-10
+ +   1:opa7    = 4.261e-15    1:opa7_b  = 1.056e-10    1:or0     = 7.715e-13
+ +   1:or1     = 7.694e-13    1:or2     = 7.700e-13    1:or3     = 7.699e-13
+ +   1:or4     = 7.701e-13    1:or5     = 7.701e-13    1:or6     = 7.708e-13
+ +   1:or7     = 7.699e-13    1:s01     = 4.226e-15    1:s01b    = 1.056e-10
+ +   1:s11     = 4.261e-15    1:s11b    = 1.056e-10    1:s21     = 4.263e-15
+ +   1:s21b    = 1.056e-10    1:s22     = 1.054e-10    1:s22b    = 1.057e-10
+ +   1:s23     = 1.056e-10    1:s23b    = 1.050e-10    1:s24     = 1.053e-10
+ +   1:s24b    = 1.050e-10    1:s25     = 1.056e-10    1:s25b    = 1.056e-10
+ +   1:s26     = 1.053e-10    1:s26b    = 1.054e-10    1:s27     = 1.052e-10
+ +   1:s27b    = 1.056e-10    1:s28     = 1.052e-10    1:s28b    = 1.057e-10
+ +   1:s29     = 1.057e-10    1:s29b    = 1.053e-10    1:vhi     = 5.000e-01
+ +   1:xnor0   =-6.714e-05    1:xnor1   =-6.716e-05    1:xnor2   =-6.717e-05
+ +   1:xnor3   =-6.714e-05    1:xnor4   =-6.722e-05    1:xnor5   =-6.715e-05
+ +   1:xnor6   =-6.713e-05    1:xnor7   =-6.697e-05    1:xor0    =-3.623e-09
+ +   1:xor1    =-3.621e-09    1:xor2    =-3.614e-09    1:xor3    =-3.621e-09
+ +   1:xor4    =-3.626e-09    1:xor5    =-3.617e-09    1:xor6    =-3.621e-09
+ +   1:xor7    =-3.623e-09    2:net1    =-1.265e-09    2:net10   =-1.087e-08
+ +   2:net11   =-1.449e-08    2:net2    =-9.370e-05    2:net3    =-2.270e-04
+ +   2:net4    =-2.270e-04    2:net5    =-2.531e-09    2:net6    =-1.872e-04
+ +   2:net7    =-1.872e-04    2:net8    =-1.872e-04    2:net9    =-7.245e-09
+ +   3:net1    =-6.478e-05    3:net10   =-8.451e-09    3:net11   =-1.207e-08
+ +   3:net2    =-1.294e-04    3:net3    =-2.306e-04    3:net4    =-2.306e-04
+ +   3:net5    =-2.624e-09    3:net6    =-1.940e-04    3:net7    =-1.940e-04
+ +   3:net8    =-1.940e-04    3:net9    =-4.829e-09    4:net1    =-6.477e-05
+ +   4:net10   =-8.451e-09    4:net11   =-1.207e-08    4:net2    =-1.294e-04
+ +   4:net3    =-2.305e-04    4:net4    =-2.305e-04    4:net5    =-2.624e-09
+ +   4:net6    =-1.940e-04    4:net7    =-1.940e-04    4:net8    =-1.940e-04
+ +   4:net9    =-4.830e-09    5:net1    =-6.470e-05    5:net10   =-8.450e-09
+ +   5:net11   =-1.207e-08    5:net2    =-1.293e-04    5:net3    =-2.303e-04
+ +   5:net4    =-2.303e-04    5:net5    =-2.621e-09    5:net6    =-1.938e-04
+ +   5:net7    =-1.938e-04    5:net8    =-1.938e-04    5:net9    =-4.828e-09
+ +   6:net1    =-6.473e-05    6:net10   =-8.444e-09    6:net11   =-1.206e-08
+ +   6:net2    =-1.293e-04    6:net3    =-2.304e-04    6:net4    =-2.304e-04
+ +   6:net5    =-2.622e-09    6:net6    =-1.939e-04    6:net7    =-1.939e-04
+ +   6:net8    =-1.939e-04    6:net9    =-4.826e-09    7:net1    =-6.472e-05
+ +   7:net10   =-8.443e-09    7:net11   =-1.206e-08    7:net2    =-1.293e-04
+ +   7:net3    =-2.304e-04    7:net4    =-2.304e-04    7:net5    =-2.622e-09
+ +   7:net6    =-1.939e-04    7:net7    =-1.939e-04    7:net8    =-1.939e-04
+ +   7:net9    =-4.826e-09    8:net1    =-6.476e-05    8:net10   =-8.458e-09
+ +   8:net11   =-1.208e-08    8:net2    =-1.294e-04    8:net3    =-2.304e-04
+ +   8:net4    =-2.304e-04    8:net5    =-2.624e-09    8:net6    =-1.940e-04
+ +   8:net7    =-1.940e-04    8:net8    =-1.940e-04    8:net9    =-4.834e-09
+ +   9:net1    =-6.473e-05    9:net10   =-8.453e-09    9:net11   =-1.207e-08
+ +   9:net2    =-1.293e-04    9:net3    =-2.305e-04    9:net4    =-2.304e-04
+ +   9:net5    =-2.622e-09    9:net6    =-1.939e-04    9:net7    =-1.939e-04
+ +   9:net8    =-1.939e-04    9:net9    =-4.830e-09   20:a11     = 1.052e-10
+ +  20:a11b    = 1.059e-10   20:a21     = 1.052e-10   20:a21b    = 1.053e-10
+ +  20:a22     = 1.054e-10   20:a22b    = 1.054e-10   20:a31     = 1.056e-10
+ +  20:a31b    = 1.053e-10   20:a32     = 1.056e-10   20:a32b    = 1.053e-10
+ +  20:a33     = 1.053e-10   20:a33b    = 1.054e-10   20:a41     = 1.056e-10
+ +  20:a41b    = 1.054e-10   20:a42     = 1.056e-10   20:a42b    = 1.056e-10
+ +  20:a43     = 1.053e-10   20:a43b    = 1.056e-10   20:a44     = 1.057e-10
+ +  20:a44b    = 1.051e-10   20:a51     = 1.053e-10   20:a51b    = 1.057e-10
+ +  20:a52     = 1.053e-10   20:a52b    = 1.053e-10   20:a53     = 1.050e-10
+ +  20:a53b    = 1.056e-10   20:a54     = 1.050e-10   20:a54b    = 1.052e-10
+ +  20:a55     = 1.054e-10   20:a55b    = 1.056e-10   20:a61     = 1.053e-10
+ +  20:a61b    = 1.054e-10   20:a62     = 1.056e-10   20:a62b    = 1.053e-10
+ +  20:a63     = 1.054e-10   20:a63b    = 1.054e-10   20:a64     = 1.052e-10
+ +  20:a64b    = 1.054e-10   20:a65     = 1.053e-10   20:a65b    = 1.057e-10
+ +  20:a66     = 1.055e-10   20:a66b    = 1.053e-10   20:a71     = 1.052e-10
+ +  20:a71b    = 1.058e-10   20:a72     = 1.050e-10   20:a72b    = 1.053e-10
+ +  20:a73     = 1.053e-10   20:a73b    = 1.053e-10   20:a74     = 1.054e-10
+ +  20:a74b    = 1.056e-10   20:a75     = 1.054e-10   20:a75b    = 1.053e-10
+ +  20:a76     = 1.052e-10   20:a76b    = 1.052e-10   20:a77     = 1.057e-10
+ +  20:a77b    = 1.054e-10   20:b11     = 1.058e-10   20:b11b    = 1.055e-10
+ +  20:b21     = 1.056e-10   20:b21b    = 1.056e-10   20:b22     = 1.053e-10
+ +  20:b22b    = 1.055e-10   20:b31     = 1.058e-10   20:b31b    = 1.054e-10
+ +  20:b32     = 1.052e-10   20:b32b    = 1.054e-10   20:b33     = 1.058e-10
+ +  20:b33b    = 1.054e-10   20:b41     = 1.056e-10   20:b41b    = 1.052e-10
+ +  20:b42     = 1.054e-10   20:b42b    = 1.053e-10   20:b43     = 1.056e-10
+ +  20:b43b    = 1.051e-10   20:b44     = 1.057e-10   20:b44b    = 1.054e-10
+ +  20:b51     = 1.058e-10   20:b51b    = 1.053e-10   20:b52     = 1.050e-10
+ +  20:b52b    = 1.058e-10   20:b53     = 1.057e-10   20:b53b    = 1.050e-10
+ +  20:b54     = 1.054e-10   20:b54b    = 1.054e-10   20:b55     = 1.054e-10
+ +  20:b55b    = 1.055e-10   20:b61     = 1.056e-10   20:b61b    = 1.057e-10
+ +  20:b62     = 1.057e-10   20:b62b    = 1.049e-10   20:b63     = 1.054e-10
+ +  20:b63b    = 1.056e-10   20:b64     = 1.052e-10   20:b64b    = 1.058e-10
+ +  20:b65     = 1.056e-10   20:b65b    = 1.049e-10   20:b66     = 1.053e-10
+ +  20:b66b    = 1.056e-10   20:b71     = 1.055e-10   20:b71b    = 1.057e-10
+ +  20:b72     = 1.056e-10   20:b72b    = 1.050e-10   20:b73     = 1.052e-10
+ +  20:b73b    = 1.057e-10   20:b74     = 1.056e-10   20:b74b    = 1.052e-10
+ +  20:b75     = 1.050e-10   20:b75b    = 1.053e-10   20:b76     = 1.053e-10
+ +  20:b76b    = 1.053e-10   20:b77     = 1.053e-10   20:b77b    = 1.056e-10
+ +  20:c1      = 4.587e-08   20:c1b     = 4.602e-10   20:c2      = 4.657e-10
+ +  20:c2b     = 4.655e-10   20:c3      = 4.656e-10   20:c3b     = 4.662e-10
+ +  20:c4      = 4.658e-10   20:c4b     = 4.655e-10   20:c5      = 4.655e-10
+ +  20:c5b     = 4.657e-10   20:c6      = 4.652e-10   20:c6b     = 4.661e-10
+ +  20:c7      = 4.656e-10   20:c7b     = 4.658e-10   20:s01     = 3.596e-08
+ +  20:s01b    = 3.596e-08   20:s02     = 1.054e-10   20:s02b    = 1.054e-10
+ +  20:s03     = 1.056e-10   20:s03b    = 1.052e-10   20:s04     = 1.057e-10
+ +  20:s04b    = 1.054e-10   20:s05     = 1.052e-10   20:s05b    = 1.050e-10
+ +  20:s06     = 1.056e-10   20:s06b    = 1.056e-10   20:s07     = 1.056e-10
+ +  20:s07b    = 1.056e-10   20:s12     = 7.446e-10   20:s12b    = 7.446e-10
+ +  20:s13     = 1.056e-10   20:s13b    = 1.054e-10   20:s14     = 1.052e-10
+ +  20:s14b    = 1.055e-10   20:s15     = 1.052e-10   20:s15b    = 1.052e-10
+ +  20:s16     = 1.057e-10   20:s16b    = 1.050e-10   20:s17     = 1.050e-10
+ +  20:s17b    = 1.054e-10   20:s23     = 7.446e-10   20:s23b    = 7.446e-10
+ +  20:s24     = 1.056e-10   20:s24b    = 1.057e-10   20:s25     = 1.054e-10
+ +  20:s25b    = 1.056e-10   20:s26     = 1.056e-10   20:s26b    = 1.054e-10
+ +  20:s27     = 1.056e-10   20:s27b    = 1.056e-10   20:s34     = 7.448e-10
+ +  20:s34b    = 7.445e-10   20:s35     = 1.053e-10   20:s35b    = 1.054e-10
+ +  20:s36     = 1.053e-10   20:s36b    = 1.056e-10   20:s37     = 1.054e-10
+ +  20:s37b    = 1.053e-10   20:s45     = 7.446e-10   20:s45b    = 7.445e-10
+ +  20:s46     = 1.054e-10   20:s46b    = 1.054e-10   20:s47     = 1.054e-10
+ +  20:s47b    = 1.056e-10   20:s56     = 7.446e-10   20:s56b    = 7.440e-10
+ +  20:s57     = 1.057e-10   20:s57b    = 1.052e-10   20:s67     = 7.447e-10
+ +  20:s67b    = 7.448e-10   21:net1    = 9.928e-15   22:net1    = 9.972e-15
+ +  23:net1    = 9.934e-15   24:net1    = 9.934e-15   25:net1    = 9.941e-15
+ +  26:net1    = 9.928e-15   27:net1    = 9.920e-15   28:net1    = 9.941e-15
+ +  29:net1    =-8.965e-05   30:net1    =-8.941e-05   31:net1    =-8.943e-05
+ +  32:net1    =-8.947e-05   33:net1    =-8.944e-05   34:net1    =-8.945e-05
+ +  35:net1    =-8.950e-05   36:net1    =-8.943e-05   37:net1    =-3.624e-09
+ +  37:net2    =-1.495e-09   37:net3    =-9.058e-10   37:net4    =-6.714e-05
+ +  38:net1    =-3.622e-09   38:net2    =-1.493e-09   38:net3    =-9.061e-10
+ +  38:net4    =-6.716e-05   39:net1    =-3.615e-09   39:net2    =-1.490e-09
+ +  39:net3    =-9.063e-10   39:net4    =-6.717e-05   40:net1    =-3.622e-09
+ +  40:net2    =-1.493e-09   40:net3    =-9.059e-10   40:net4    =-6.714e-05
+ +  41:net1    =-3.627e-09   41:net2    =-1.496e-09   41:net3    =-9.070e-10
+ +  41:net4    =-6.723e-05   42:net1    =-3.618e-09   42:net2    =-1.492e-09
+ +  42:net3    =-9.061e-10   42:net4    =-6.716e-05   43:net1    =-3.622e-09
+ +  43:net2    =-1.494e-09   43:net3    =-9.058e-10   43:net4    =-6.713e-05
+ +  44:net1    =-3.623e-09   44:net2    =-1.495e-09   44:net3    =-9.037e-10
+ +  44:net4    =-6.697e-05   47:net1    =-7.223e-05   47:net10   =-7.237e-09
+ +  47:net11   =-7.236e-09   47:net2    =-1.443e-04   47:net3    =-2.420e-04
+ +  47:net4    =-2.420e-04   47:net5    =-1.083e-04   47:net6    =-2.163e-04
+ +  47:net7    =-2.163e-04   47:net8    =-2.163e-04   47:net9    =-3.620e-09
+ +  48:net1    =-7.224e-05   48:net10   =-7.239e-09   48:net11   =-7.238e-09
+ +  48:net2    =-1.443e-04   48:net3    =-2.420e-04   48:net4    =-2.420e-04
+ +  48:net5    =-1.083e-04   48:net6    =-2.163e-04   48:net7    =-2.163e-04
+ +  48:net8    =-2.163e-04   48:net9    =-3.621e-09   49:net1    =-7.226e-05
+ +  49:net10   =-7.236e-09   49:net11   =-7.235e-09   49:net2    =-1.444e-04
+ +  49:net3    =-2.420e-04   49:net4    =-2.420e-04   49:net5    =-1.084e-04
+ +  49:net6    =-2.164e-04   49:net7    =-2.164e-04   49:net8    =-2.164e-04
+ +  49:net9    =-3.620e-09   50:net1    =-7.237e-05   50:net10   =-7.255e-09
+ +  50:net11   =-7.253e-09   50:net2    =-1.446e-04   50:net3    =-2.421e-04
+ +  50:net4    =-2.421e-04   50:net5    =-1.085e-04   50:net6    =-2.167e-04
+ +  50:net7    =-2.167e-04   50:net8    =-2.167e-04   50:net9    =-3.627e-09
+ +  51:net1    =-7.224e-05   51:net10   =-7.239e-09   51:net11   =-7.238e-09
+ +  51:net2    =-1.443e-04   51:net3    =-2.420e-04   51:net4    =-2.420e-04
+ +  51:net5    =-1.083e-04   51:net6    =-2.163e-04   51:net7    =-2.163e-04
+ +  51:net8    =-2.163e-04   51:net9    =-3.621e-09   52:net1    =-7.224e-05
+ +  52:net10   =-7.236e-09   52:net11   =-7.234e-09   52:net2    =-1.443e-04
+ +  52:net3    =-2.420e-04   52:net4    =-2.420e-04   52:net5    =-1.083e-04
+ +  52:net6    =-2.163e-04   52:net7    =-2.163e-04   52:net8    =-2.163e-04
+ +  52:net9    =-3.620e-09   53:net1    =-7.229e-05   53:net10   =-7.229e-09
+ +  53:net11   =-7.227e-09   53:net2    =-1.444e-04   53:net3    =-2.424e-04
+ +  53:net4    =-2.424e-04   53:net5    =-1.084e-04   53:net6    =-2.165e-04
+ +  53:net7    =-2.165e-04   53:net8    =-2.165e-04   53:net9    =-3.617e-09
+ +  54:net1    =-7.229e-05   54:net10   =-7.241e-09   54:net11   =-7.240e-09
+ +  54:net2    =-1.444e-04   54:net3    =-2.423e-04   54:net4    =-2.423e-04
+ +  54:net5    =-1.084e-04   54:net6    =-2.165e-04   54:net7    =-2.165e-04
+ +  54:net8    =-2.165e-04   54:net9    =-3.621e-09  119:net1    = 4.744e-10
+ + 119:net2    = 4.748e-10  119:net3    = 4.738e-10  120:net1    = 4.741e-10
+ + 120:net2    = 4.745e-10  120:net3    = 4.747e-10  121:net1    = 4.744e-10
+ + 121:net2    = 4.746e-10  121:net3    = 4.741e-10  122:net1    = 4.744e-10
+ + 122:net2    = 4.744e-10  122:net3    = 4.741e-10  123:net1    = 4.746e-10
+ + 123:net2    = 4.744e-10  123:net3    = 4.742e-10  124:net1    = 4.741e-10
+ + 124:net2    = 4.747e-10  124:net3    = 4.742e-10  125:net1    = 4.741e-10
+ + 125:net2    = 4.745e-10  125:net3    = 4.743e-10  126:net1    = 4.739e-10
+ + 126:net2    = 4.747e-10  126:net3    = 4.741e-10  412:vns1    = 8.948e-08
+ + 412:vns10   = 8.948e-08  412:vns11   = 7.179e-08  412:vns12   = 7.179e-08
+ + 412:vns17   = 7.314e-10  412:vns18   = 5.506e-10  412:vns2    = 8.945e-08
+ + 412:vns22   = 7.219e-08  412:vns23   = 8.511e-08  412:vns3    = 7.179e-08
+ + 412:vns4    = 7.179e-08  412:vns9    = 8.945e-08  427:vns1    = 1.309e-09
+ + 427:vns10   = 1.310e-09  427:vns11   = 1.332e-09  427:vns12   = 1.332e-09
+ + 427:vns17   = 7.318e-10  427:vns18   = 5.488e-10  427:vns2    = 1.309e-09
+ + 427:vns22   = 7.322e-10  427:vns23   = 5.488e-10  427:vns3    = 1.331e-09
+ + 427:vns4    = 1.331e-09  427:vns9    = 1.309e-09  441:vns1    = 1.310e-09
+ + 441:vns10   = 1.309e-09  441:vns11   = 1.332e-09  441:vns12   = 1.332e-09
+ + 441:vns17   = 7.324e-10  441:vns18   = 5.492e-10  441:vns2    = 1.309e-09
+ + 441:vns22   = 7.317e-10  441:vns23   = 5.489e-10  441:vns3    = 1.332e-09
+ + 441:vns4    = 1.332e-09  441:vns9    = 1.309e-09  454:vns1    = 1.308e-09
+ + 454:vns10   = 1.310e-09  454:vns11   = 1.332e-09  454:vns12   = 1.332e-09
+ + 454:vns17   = 7.318e-10  454:vns18   = 5.488e-10  454:vns2    = 1.309e-09
+ + 454:vns22   = 7.318e-10  454:vns23   = 5.492e-10  454:vns3    = 1.331e-09
+ + 454:vns4    = 1.331e-09  454:vns9    = 1.310e-09  466:vns1    = 1.310e-09
+ + 466:vns10   = 1.310e-09  466:vns11   = 1.332e-09  466:vns12   = 1.332e-09
+ + 466:vns17   = 7.320e-10  466:vns18   = 5.493e-10  466:vns2    = 1.310e-09
+ + 466:vns22   = 7.320e-10  466:vns23   = 5.488e-10  466:vns3    = 1.332e-09
+ + 466:vns4    = 1.332e-09  466:vns9    = 1.309e-09  477:vns1    = 1.308e-09
+ + 477:vns10   = 1.309e-09  477:vns11   = 1.332e-09  477:vns12   = 1.332e-09
+ + 477:vns17   = 7.323e-10  477:vns18   = 5.497e-10  477:vns2    = 1.308e-09
+ + 477:vns22   = 7.313e-10  477:vns23   = 5.489e-10  477:vns3    = 1.331e-09
+ + 477:vns4    = 1.331e-09  477:vns9    = 1.309e-09  487:vns1    = 1.310e-09
+ + 487:vns10   = 1.309e-09  487:vns11   = 1.332e-09  487:vns12   = 1.332e-09
+ + 487:vns17   = 7.322e-10  487:vns18   = 5.496e-10  487:vns2    = 1.310e-09
+ + 487:vns22   = 7.320e-10  487:vns23   = 5.489e-10  487:vns3    = 1.332e-09
+ + 487:vns4    = 1.332e-09  487:vns9    = 1.309e-09  496:vns1    = 1.309e-09
+ + 496:vns10   = 1.309e-09  496:vns11   = 1.331e-09  496:vns12   = 1.331e-09
+ + 496:vns17   = 7.326e-10  496:vns18   = 5.497e-10  496:vns2    = 1.309e-09
+ + 496:vns22   = 7.319e-10  496:vns23   = 5.490e-10  496:vns3    = 1.331e-09
+ + 496:vns4    = 1.331e-09  496:vns9    = 1.309e-09
+
+
+ ****  voltage sources
+
+ subckt                                                          
+ element     0:vclk1       0:vclk2       0:vclk3       0:vclk4   
+  volts         0.            0.            0.            0.     
+  current    -1.839e-10    -6.544e-11     5.490e-15     6.262e-16
+  power         0.            0.            0.            0.     
+
+ subckt                                                          
+ element     0:va0         0:va0b        0:va1         0:va1b    
+  volts       5.000e-01       0.          5.000e-01       0.     
+  current    -5.000e-13       0.         -5.000e-13       0.     
+  power       2.500e-13       0.          2.500e-13       0.     
+
+ subckt                                                          
+ element     0:va2         0:va2b        0:va3         0:va3b    
+  volts       5.000e-01       0.          5.000e-01       0.     
+  current    -5.000e-13       0.         -5.000e-13       0.     
+  power       2.500e-13       0.          2.500e-13       0.     
+
+ subckt                                                          
+ element     0:va4         0:va4b        0:va5         0:va5b    
+  volts       5.000e-01       0.          5.000e-01       0.     
+  current    -5.000e-13       0.         -5.000e-13       0.     
+  power       2.500e-13       0.          2.500e-13       0.     
+
+ subckt                                                          
+ element     0:va6         0:va6b        0:va7         0:va7b    
+  volts       5.000e-01       0.          5.000e-01       0.     
+  current    -5.000e-13       0.         -5.000e-13       0.     
+  power       2.500e-13       0.          2.500e-13       0.     
+
+ subckt                                                          
+ element     0:vb0         0:vb0b        0:vb1         0:vb1b    
+  volts         0.          5.000e-01       0.          5.000e-01
+  current       0.         -5.000e-13       0.         -5.000e-13
+  power         0.          2.500e-13       0.          2.500e-13
+
+ subckt                                                          
+ element     0:vb2         0:vb2b        0:vb3         0:vb3b    
+  volts         0.          5.000e-01       0.          5.000e-01
+  current       0.         -5.000e-13       0.         -5.000e-13
+  power         0.          2.500e-13       0.          2.500e-13
+
+ subckt                                                          
+ element     0:vb4         0:vb4b        0:vb5         0:vb5b    
+  volts         0.          5.000e-01       0.          5.000e-01
+  current       0.         -5.000e-13       0.         -5.000e-13
+  power         0.          2.500e-13       0.          2.500e-13
+
+ subckt                                                          
+ element     0:vb6         0:vb6b        0:vb7         0:vb7b    
+  volts         0.          5.000e-01       0.          5.000e-01
+  current       0.         -5.000e-13       0.         -5.000e-13
+  power         0.          2.500e-13       0.          2.500e-13
+
+ subckt                                                          
+ element     0:vcin        0:vcinb       0:vs2         0:vs2b    
+  volts         0.          5.000e-01     5.000e-01       0.     
+  current       0.         -5.000e-13    -5.000e-13       0.     
+  power         0.          2.500e-13     2.500e-13       0.     
+
+ subckt                                                          
+ element     0:vs1         0:vs1b        0:vs0         0:vs0b    
+  volts       5.000e-01       0.          5.000e-01       0.     
+  current    -5.000e-13       0.         -5.000e-13       0.     
+  power       2.500e-13       0.          2.500e-13       0.     
+
+ subckt      xalu1     
+ element     1:vhi     
+  volts       5.000e-01
+  current    -5.000e-13
+  power       2.500e-13
+
+     total voltage source power dissipation=  5.250e-12       watts
+
+
+ ******  
+  init                                                                         
+  ******  transient analysis               tnom=  25.000 temp=  25.000         
+ ******  
+   itotal1= -1.4250E-07  from=  8.0000E-09     to=  5.0000E-08
+   vtotal1=  2.5000E-01  from=  8.0000E-09     to=  5.0000E-08
+   etotal1=  3.5625E-08
+   p_avg1= -1.0081E-07  from=  8.0000E-09     to=  5.0000E-08
+   itotal2= -1.0836E-07  from=  8.0000E-09     to=  5.0000E-08
+   vtotal2=  2.5000E-01  from=  8.0000E-09     to=  5.0000E-08
+   etotal2=  2.7090E-08
+   p_avg2= -6.2824E-08  from=  8.0000E-09     to=  5.0000E-08
+   itotal3= -7.2737E-08  from=  8.0000E-09     to=  5.0000E-08
+   vtotal3=  2.5000E-01  from=  8.0000E-09     to=  5.0000E-08
+   etotal3=  1.8184E-08
+   p_avg3= -3.6978E-08  from=  8.0000E-09     to=  5.0000E-08
+   itotal4= -7.0225E-08  from=  8.0000E-09     to=  5.0000E-08
+   vtotal4=  2.5000E-01  from=  8.0000E-09     to=  5.0000E-08
+   etotal4=  1.7556E-08
+   p_avg4= -3.4170E-08  from=  8.0000E-09     to=  5.0000E-08
+   etotal=  9.8456E-08
+
+          ***** job concluded
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 13:27:39 02/10/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  job statistics summary           tnom=  25.000 temp=  25.000         
+ ******  
+
+           total memory used     112802 kbytes
+
+  # nodes =   14226 # elements=   35291
+  # diodes=       0 # bjts    =       0 # jfets   =       0 # mosfets =       0
+  # va device =       0
+
+    analysis           time    # points   tot. iter  conv.iter
+
+    op point          56.87           1          14
+    transient      15563.63          52        5525        1144 rev=       216
+    readin             0.23
+    errchk          1529.96
+    setup              1.20
+    output             0.00
+           total cpu time      17151.90 seconds
+               job started at  13:27:39 02/10/2016
+               job ended   at  18:13:31 02/10/2016
+
+
+  Init: hspice initialization file: C:\synopsys\Hspice_Z-2007.03\hspice.ini     
+                                                  
+  lic: Release hspice token(s) 
