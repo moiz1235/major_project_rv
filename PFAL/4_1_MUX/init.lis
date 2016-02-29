@@ -1,0 +1,258 @@
+ ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 19:11:52 02/16/2016 pcnt       
+  Copyright (C) 2007 Synopsys, Inc. All Rights Reserved.                       
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the 
+  terms and conditions of the license agreement found in:
+    C:\synopsys\Hspice_Z-2007.03\license.txt
+  Use of this program is your acceptance to be bound by this 
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: f:\major_project\codes\gnrfet\adiabatic_logic\pfal\4_1_mux\init.sp
+  lic:  
+  lic: FLEXlm: v8.4b 
+  lic: USER:   MAHADIKAR M          HOSTNAME: Megaraj 
+  lic: HOSTID: "4ae3477af0ef 1ae3477af0ef 28e3477af0ef a01d4811dd4f 080027004899
+ "
+  lic: Using FLEXlm license file: 
+  lic: c:\synopsys\hspice_2007-09.lic 
+  lic: Checkout 1 hspice;  Encryption code: AD47C1C891DA5D596A45 
+  lic: License/Maintenance for hspice will expire on 31-dec-2020/2007.9 
+  lic: NODE LOCKED license on hostid "4ae3477af0ef 1ae3477af0ef 28e3477af0ef a01
+ d
+  lic:   
+ Init: read install configuration file: C:\synopsys\Hspice_Z-2007.03\meta.cfg
+  Init: hspice initialization file: C:\synopsys\Hspice_Z-2007.03\hspice.ini     
+                                                  
+
+ .options post
+ .options autostop
+ .options autostop
+ .options ingold=2     dcon=1
+ .options ingold=2     dcon=1
+ .options gshunt=1e-12 rmin=1e-15 
+ .options gshunt=1e-12 rmin=1e-15 
+ .options abstol=1e-5  absvdc=1e-4 
+ .options abstol=1e-5  absvdc=1e-4 
+ .options reltol=1e-2  relvdc=1e-2 
+ .options reltol=1e-2  relvdc=1e-2 
+ .options numdgt=4     pivot=1
+ .options numdgt=4     pivot=1
+ *.options trcon=0
+ *.options trcon=0
+
+ *library file*
+ .lib 'gnrfet.lib' gnrfet
+
+ .global gnd
+ .endl gnrfet
+
+ .global gnd
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\4_1_mux\pfal_4_1_mux.sp"
+ .include "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\4_1_mux\pfal_4_1_mux.sp"
+ .param   temp=27
+ *****************************pfal mux 4x1***************************************
+ .subckt pfal_mux4_1 pwr_clk s1 s0 a b c d s1_b s0_b a_b b_b c_b d_b y y_b
+ xm1p y_b y pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1p y_b y pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y y_b pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2p y y_b pwr_clk pwr_clk gnrfetpmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_b y gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm1n y_b y gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y y_b gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm2n y y_b gnd gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm3n pwr_clk a net1 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net1 s0_b net2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm4n net1 s0_b net2 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n net2 s1_b y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm5n net2 s1_b y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm6n pwr_clk b net3 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n net3 s0 net4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm7n net3 s0 net4 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n net4 s1_b y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm8n net4 s1_b y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm9n pwr_clk c net5 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n net5 s0_b net6 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm10n net5 s0_b net6 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm11n net6 s1 y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm11n net6 s1 y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm12n pwr_clk d net7 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm13n net7 s0 net8 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm13n net7 s0 net8 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm14n net8 s1 y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm14n net8 s1 y gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm15n pwr_clk a_b net9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm16n pwr_clk s0 net9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm16n pwr_clk s0 net9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm17n pwr_clk s1 net9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm17n pwr_clk s1 net9 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm18n net9 b_b net10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm19n net9 s0_b net10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm19n net9 s0_b net10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm20n net9 s1 net10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm20n net9 s1 net10 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm21n net10 c_b net11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm22n net10 s0 net11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm22n net10 s0 net11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm23n net10 s1_b net11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm23n net10 s1_b net11 gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ xm24n net11 d_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm25n net11 s0_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm25n net11 s0_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm26n net11 s1_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+ xm26n net11 s1_b y_b gnd gnrfetnmos nrib=6 n=12 l=10n tox=0.95n sp=2n dop=0.001 p=0
+
+ .ends pfal_mux4_1
+ .param   temp=27
+
+
+ vs0 vs0 gnd pat (.5 0 0 0.01n 0.01n 3n b1010100010 r=3)
+ vs0b vs0b gnd pat (.5 0 0 0.01n 0.01n 3n b0000001000 r=3)
+ vs0b vs0b gnd pat (.5 0 0 0.01n 0.01n 3n b0000001000 r=3)
+ vs1 vs1 gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5)
+ vs1 vs1 gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5)
+ vs1b vs1b gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5)
+ vs1b vs1b gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5)
+ va va gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5)
+ va va gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5)
+ vab vab gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5)
+ vab vab gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5)
+ vc vc gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5) 
+ vc vc gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5) 
+ vcb vcb gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5)
+ vcb vcb gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5)
+ vb vb gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vb vb gnd pat (.5 0 0 0.01n 0.01n 3n b0000101010 r=5) 
+ vbb vbb gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vbb vbb gnd pat (.5 0 0 0.01n 0.01n 3n b1010000000 r=5) 
+ vd vd gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ vd vd gnd pat (.5 0 0 0.01n 0.01n 3n b1000100010 r=5) 
+ vdb vdb gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ vdb vdb gnd pat (.5 0 0 0.01n 0.01n 3n b0010001000 r=5)
+ vclk1 vclk1 0 pulse 0 .5 1n 1n 1n 2n 6.0n
+ vclk1 vclk1 0 pulse 0 .5 1n 1n 1n 2n 6.0n
+
+
+ xmux vclk1 vs1 vs0 va vb vc vd vs1b vs0b vab vbb vcb vdb y yb pfal_mux4_1
+
+
+ * transient analysis *
+
+
+ * transient analysis *
+ .op
+ .tran 1n 50n
+ .tran 1n 50n
+ .meas tran itotal1 avg i(vclk1) from=8ns to=50ns
+ .meas tran itotal1 avg i(vclk1) from=8ns to=50ns
+ .meas tran vtotal1 avg v(vclk1) from=8ns to=50ns
+ .meas tran vtotal1 avg v(vclk1) from=8ns to=50ns
+ .meas etotal1 param='-vtotal1*itotal1'
+ .meas etotal1 param='-vtotal1*itotal1'
+ .meas tran p_avg1 avg p(vclk1) from=8n to=50n
+ .meas tran p_avg1 avg p(vclk1) from=8n to=50n
+ .end 
+ .end 
+
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 19:11:52 02/16/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  circuit name directory                                               
+ ******  
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xmux.                           pfal_mux4_1        1.00 
+
+ **warning** dc voltage reset to initial transient source value
+             in source        0:vclk1               new dc=  0.0000D+00
+
+  Opening plot unit= 79
+ file=f:\major_project\codes\gnrfet\adiabatic_logic\pfal\4_1_mux\init.pa0      
+
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 19:11:52 02/16/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  operating point information      tnom=  25.000 temp=  25.000         
+ ******  
+ ***** operating point status is all       simulation time is     0.     
+     node    =voltage       node    =voltage       node    =voltage
+
+ + 0:va      = 5.000e-01  0:vab     =   0.       0:vb      =   0.     
+ + 0:vbb     = 5.000e-01  0:vc      =   0.       0:vcb     = 5.000e-01
+ + 0:vclk1   =   0.       0:vd      = 5.000e-01  0:vdb     =   0.     
+ + 0:vs0     = 5.000e-01  0:vs0b    =   0.       0:vs1     = 5.000e-01
+ + 0:vs1b    =   0.       0:y       =-2.713e-08  0:yb      =-6.445e-09
+ + 1:net1    =-1.700e-13  1:net10   =-1.085e-08  1:net11   =-1.085e-08
+ + 1:net2    =-1.325e-08  1:net3    =-1.341e-04  1:net4    =-1.341e-04
+ + 1:net5    =-1.505e-08  1:net6    =-3.075e-08  1:net7    =-1.266e-08
+ + 1:net8    =-2.171e-08  1:net9    =-7.235e-09
+
+
+ ****  voltage sources
+
+ subckt                                                              
+ element   0:vs0       0:vs0b      0:vs1       0:vs1b      0:va      
+  volts     5.000e-01     0.        5.000e-01     0.        5.000e-01
+  current  -5.000e-13     0.       -5.000e-13     0.       -5.000e-13
+  power     2.500e-13     0.        2.500e-13     0.        2.500e-13
+
+ subckt                                                              
+ element   0:vab       0:vc        0:vcb       0:vb        0:vbb     
+  volts       0.          0.        5.000e-01     0.        5.000e-01
+  current     0.          0.       -5.000e-13     0.       -5.000e-13
+  power       0.          0.        2.500e-13     0.        2.500e-13
+
+ subckt                                      
+ element   0:vd        0:vdb       0:vclk1   
+  volts     5.000e-01     0.          0.     
+  current  -5.000e-13     0.       -1.366e-11
+  power     2.500e-13     0.          0.     
+
+     total voltage source power dissipation=  1.500e-12       watts
+
+
+ ******  
+  init                                                                         
+  ******  transient analysis               tnom=  25.000 temp=  25.000         
+ ******  
+   itotal1= -2.9372E-10  from=  8.0000E-09     to=  5.0000E-08
+   vtotal1=  2.5000E-01  from=  8.0000E-09     to=  5.0000E-08
+   etotal1=  7.3431E-11
+   p_avg1= -3.9050E-09  from=  8.0000E-09     to=  5.0000E-08
+
+          ***** job concluded
+1 ****** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 19:11:52 02/16/2016 pcnt       
+ ******  
+  init                                                                         
+  ******  job statistics summary           tnom=  25.000 temp=  25.000         
+ ******  
+
+           total memory used       1541 kbytes
+
+  # nodes =     201 # elements=     475
+  # diodes=       0 # bjts    =       0 # jfets   =       0 # mosfets =       0
+  # va device =       0
+
+    analysis           time    # points   tot. iter  conv.iter
+
+    op point           0.60           1          14
+    transient         78.35          51        2102         490 rev=        39
+    readin             0.10
+    errchk             0.42
+    setup              0.04
+    output             0.00
+           total cpu time         79.56 seconds
+               job started at  19:11:52 02/16/2016
+               job ended   at  19:13:11 02/16/2016
+
+
+  Init: hspice initialization file: C:\synopsys\Hspice_Z-2007.03\hspice.ini     
+                                                  
+  lic: Release hspice token(s) 

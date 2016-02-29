@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='F-2011.09 32-BIT'
+.TITLE 'alu'
+ itotal1          vtotal1          etotal1          avgpow            
+ td1              td2              temper           alter#            
+ -1.049e-05        5.000e-01        5.244e-06       -5.244e-06        
+  4.620e-12        3.470e-11        2.500e+01       1                 

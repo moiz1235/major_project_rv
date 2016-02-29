@@ -1,0 +1,39 @@
+* "simulator" "HSPICE" 
+* "version" "Z-2007.03       "
+* "format" "HSP"
+* "rundate" "19:11:52 02/16/2016 "
+* "netlist" "f:\major_project\codes\gnrfet\adiabatic_logic\pfal\4_1_mux\init.sp "
+* "runtitle" " init                                                            "
+* time =    0.            
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ va = 5.000e-01       
++ vab =   0.            
++ vb =   0.            
++ vbb = 5.000e-01       
++ vc =   0.            
++ vcb = 5.000e-01       
++ vclk1 =   0.            
++ vd = 5.000e-01       
++ vdb =   0.            
++ vs0 = 5.000e-01       
++ vs0b =   0.            
++ vs1 = 5.000e-01       
++ vs1b =   0.            
++ y =-2.713e-08       
++ yb =-6.445e-09       
++ xmux.net1 =-1.700e-13       
++ xmux.net10 =-1.085e-08       
++ xmux.net11 =-1.085e-08       
++ xmux.net2 =-1.325e-08       
++ xmux.net3 =-1.341e-04       
++ xmux.net4 =-1.341e-04       
++ xmux.net5 =-1.505e-08       
++ xmux.net6 =-3.075e-08       
++ xmux.net7 =-1.266e-08       
++ xmux.net8 =-2.171e-08       
++ xmux.net9 =-7.235e-09       
+***   END: Saved Operating Point ***                     

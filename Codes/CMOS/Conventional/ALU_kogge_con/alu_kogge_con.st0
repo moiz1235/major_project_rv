@@ -1,0 +1,67 @@
+***** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******
+ Input File: f:\major_project\codes\cmos\non_adiabatic\alu\alu_kogge_con.sp
+ lic:
+ lic: FLEXlm: v10.8
+ lic: USER:   Inspiron             HOSTNAME: Muniraj
+ lic: HOSTID: "fcdd55ffffff 5e855678b24d 1e855678b24d bc855678b24d 74867a25f6d4
+ lic: Using FLEXlm license file:
+ lic: 27000@Muniraj
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 31-dec-2019/2019.12
+ lic: NODE LOCKED license on hostid "fcdd55ffffff 5e855678b24d 1e855678b24d bc85
+ lic:
+ init: begin read circuit files,  cpu clock=  7.48E+00
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\behave\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\behave\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\AD\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\XILINX\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\TLINE\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\TI\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\SIGNET\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\PCI\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\LIN_TECH\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\FET\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\DIO\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\COMLINE\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\BURR_BRN\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\BJT\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\behave\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\AD\
+       option post     =     2.00
+       option runlvl
+       option post
+       option autost
+       option ingold   =     2.00
+       option dcon     =     1.00
+       option gshunt   =    1.000E-12
+       option rmin     =    1.000E-15
+       option abstol   =    1.000E-05
+       option absvdc   =    1.000E-04
+       option reltol   =    1.000E-02
+       option relvdc   =    1.000E-02
+       option numdgt   =     4.00
+       option pivot    =     1.00
+ init: end read circuit files,  cpu clock=  7.80E+00 memory=    171 kb
+ init: begin check errors,  cpu clock=  7.80E+00
+ init: end check errors,  cpu clock=  8.75E+00 memory=   9504 kb
+ init: begin setup matrix, pivot=     1 cpu clock=  8.75E+00
+       establish matrix -- done,  cpu clock=  8.78E+00 memory=  11443 kb
+       re-order matrix -- done,  cpu clock=  8.97E+00 memory=  11068 kb
+ init: end setup matrix,  cpu clock=  9.06E+00 memory=  15451 kb
+ dcop: begin dcop,  cpu clock=  9.08E+00
+ dcop: end dcop,  cpu clock=  3.35E+02 memory=1083133 kb  tot_iter=      14
+ output: f:\major_project\codes\cmos\non_adiabatic\alu\alu_kogge_con.mt0
+ sweep: tran tran0    begin, stop_t=  2.50E-08 #sweeps=  26 cpu clock=  3.37E+02
+ tran: time= 2.7273E-09 tot_iter=     948 conv_iter=     191 cpu clock= 3.61E+02
+ tran: time= 5.0001E-09 tot_iter=    1654 conv_iter=     319 cpu clock= 3.78E+02
+ tran: time= 7.7339E-09 tot_iter=    2868 conv_iter=     556 cpu clock= 4.02E+02
+ tran: time= 1.0000E-08 tot_iter=    3977 conv_iter=     771 cpu clock= 4.22E+02
+ tran: time= 1.2576E-08 tot_iter=    5245 conv_iter=    1020 cpu clock= 4.49E+02
+ tran: time= 1.5000E-08 tot_iter=    5886 conv_iter=    1140 cpu clock= 4.65E+02
+ tran: time= 1.7700E-08 tot_iter=    7130 conv_iter=    1365 cpu clock= 4.91E+02
+ tran: time= 2.0000E-08 tot_iter=    8175 conv_iter=    1533 cpu clock= 5.16E+02
+ tran: time= 2.2615E-08 tot_iter=    8891 conv_iter=    1671 cpu clock= 5.33E+02
+ tran: time= 2.5000E-08 tot_iter=   10055 conv_iter=    1868 cpu clock= 5.59E+02
+ sweep: tran tran0    end,  cpu clock=  5.60E+02 memory=1083170 kb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

@@ -1,0 +1,67 @@
+***** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******
+ Input File: f:\major_project\codes\cmos\adiabatic\pfal\alu\alu_rca_con\init.sp
+ lic:
+ lic: FLEXlm: v10.8
+ lic: USER:   Inspiron             HOSTNAME: Muniraj
+ lic: HOSTID: "5e855678b24d 1e855678b24d bc855678b24d 74867a25f6d4 005056c00001
+ lic: Using FLEXlm license file:
+ lic: 27000@Muniraj
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 31-dec-2019/2019.12
+ lic: NODE LOCKED license on hostid "5e855678b24d 1e855678b24d bc855678b24d 7486
+ lic:
+ init: begin read circuit files,  cpu clock=  6.05E+00
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\behave\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\behave\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\AD\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\XILINX\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\TLINE\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\TI\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\SIGNET\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\PCI\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\LIN_TECH\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\FET\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\DIO\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\COMLINE\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\BURR_BRN\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\BJT\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\behave\
+       option search   = F:\synopsys\Hspice_F-2011.09\PARTS\AD\
+       option post     =     2.00
+       option runlvl
+       option post
+       option autost
+       option ingold   =     2.00
+       option dcon     =     1.00
+       option gshunt   =    1.000E-12
+       option rmin     =    1.000E-09
+       option abstol   =    1.000E-05
+       option absvdc   =    1.000E-04
+       option reltol   =    1.000E-02
+       option relvdc   =    1.000E-02
+       option numdgt   =     4.00
+       option pivot    =     1.00
+       option lvltim   =     1.00
+ init: end read circuit files,  cpu clock=  6.27E+00 memory=    235 kb
+ init: begin check errors,  cpu clock=  6.27E+00
+ init: end check errors,  cpu clock=  6.94E+00 memory=  11935 kb
+ init: begin setup matrix, pivot=     1 cpu clock=  6.94E+00
+       establish matrix -- done,  cpu clock=  6.97E+00 memory=  14288 kb
+       re-order matrix -- done,  cpu clock=  7.06E+00 memory=  13911 kb
+ init: end setup matrix,  cpu clock=  7.09E+00 memory=  19594 kb
+ dcop: begin dcop,  cpu clock=  7.11E+00
+ dcop: end dcop,  cpu clock=  1.07E+01 memory=  27869 kb  tot_iter=       9
+ output: f:\major_project\codes\cmos\adiabatic\pfal\alu\alu_rca_con\init.mt0
+ sweep: tran tran0    begin, stop_t=  5.10E-08 #sweeps=  52 cpu clock=  1.07E+01
+ tran: time= 5.1049E-09 tot_iter=     505 conv_iter=     113 cpu clock= 3.20E+01
+ tran: time= 1.0252E-08 tot_iter=    1041 conv_iter=     233 cpu clock= 5.63E+01
+ tran: time= 1.5477E-08 tot_iter=    1475 conv_iter=     341 cpu clock= 7.69E+01
+ tran: time= 2.0500E-08 tot_iter=    1911 conv_iter=     442 cpu clock= 9.69E+01
+ tran: time= 2.5607E-08 tot_iter=    2401 conv_iter=     559 cpu clock= 1.19E+02
+ tran: time= 3.0617E-08 tot_iter=    2862 conv_iter=     668 cpu clock= 1.40E+02
+ tran: time= 3.5744E-08 tot_iter=    3229 conv_iter=     759 cpu clock= 1.57E+02
+ tran: time= 4.0917E-08 tot_iter=    3767 conv_iter=     884 cpu clock= 1.80E+02
+ tran: time= 4.5956E-08 tot_iter=    4263 conv_iter=    1004 cpu clock= 2.03E+02
+ sweep: tran tran0    end,  cpu clock=  2.20E+02 memory=  27918 kb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

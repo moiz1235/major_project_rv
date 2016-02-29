@@ -1,0 +1,83 @@
+***** HSPICE -Z-2007.03 32-BIT  (Feb 28 2007) 18:52:20 02/09/2016 pcnt
+ Input File: f:\major_project\codes\cmos\conventional\alu\alu (2).sp
+ lic:
+ lic: FLEXlm: v8.4b
+ lic: USER:   MAHADIKAR M          HOSTNAME: Megaraj
+ lic: HOSTID: "4ae3477af0ef 1ae3477af0ef 28e3477af0ef a01d4811dd4f 080027004899"
+ lic: Using FLEXlm license file:
+ lic: c:\synopsys\hspice_2007-09.lic
+ lic: Checkout 1 hspice;  Encryption code: AD47C1C891DA5D596A45
+ lic: License/Maintenance for hspice will expire on 31-dec-2020/2007.9
+ lic: NODE LOCKED license on hostid "4ae3477af0ef 1ae3477af0ef 28e3477af0ef a01d
+ lic:
+ Init: hspice initialization file: C:\synopsys\Hspice_Z-2007.03\hspice.ini
+ init: begin read circuit files,  cpu clock=  2.66E-01
+       option post
+       option autost
+       option ingold   =     2.00
+       option dcon     =     1.00
+       option gshunt   =    1.000E-12
+       option rmin     =    1.000E-15
+       option abstol   =    1.000E-05
+       option absvdc   =    1.000E-04
+       option reltol   =    1.000E-02
+       option relvdc   =    1.000E-02
+       option numdgt   =     4.00
+       option pivot    =     1.00
+ init: end read circuit files,  cpu clock=  3.49E-01 memory=    162 kb
+ init: begin check errors,  cpu clock=  3.49E-01
+ init: end check errors,  cpu clock=  4.41E+00 memory=   2192 kb
+ init: begin setup matrix, pivot=     1 cpu clock=  4.41E+00
+       establish matrix -- done,  cpu clock=  4.42E+00 memory=   2317 kb
+       re-order matrix -- done,  cpu clock=  4.43E+00 memory=   2317 kb
+ init: end setup matrix,  cpu clock=  4.45E+00 memory=   2606 kb
+ dcop: begin dcop,  cpu clock=  4.46E+00
+ dcop: begin pseudo transient
+ dcop: ...failed with iteration exhausted
+ dcop: end pseudo transient
+       establish matrix -- done,  cpu clock=  4.87E+01 memory=   2359 kb
+       re-order matrix -- done,  cpu clock=  4.87E+01 memory=   2372 kb
+ dcop: begin gshunt ramping
+       establish matrix -- done,  cpu clock=  9.03E+01 memory=   2365 kb
+       re-order matrix -- done,  cpu clock=  9.03E+01 memory=   2378 kb
+ dcop: gshunt =      0.1000000E-03
+ dcop: gshunt =      0.1000000E-04
+ dcop: gshunt =      0.1000000E-05
+ dcop: gshunt =      0.1000000E-06
+ dcop: gshunt =      0.1000000E-07
+ dcop: gshunt =      0.1000000E-08
+ dcop: gshunt =      0.1000000E-09
+ dcop: gshunt =      0.1000000E-10
+ dcop: gshunt =      0.5050000E-10
+ dcop: gshunt =      0.7277500E-10
+ dcop: gshunt =      0.8502625E-10
+ dcop: gshunt =      0.9176444E-10
+ dcop: gshunt =      0.9547044E-10
+ dcop: gshunt =      0.9750874E-10
+ dcop: gshunt =      0.9862981E-10
+ dcop: gshunt =      0.9924639E-10
+ dcop: gshunt =      0.9958552E-10
+ dcop: gshunt =      0.9977203E-10
+ dcop: gshunt =      0.9987462E-10
+ dcop: gshunt =      0.9993104E-10
+ dcop: gshunt =      0.9996207E-10
+ dcop: gshunt =      0.9997914E-10
+ dcop: gshunt =      0.9998853E-10
+ dcop: gshunt =      0.9999369E-10
+ dcop: gshunt =      0.9999653E-10
+ dcop: gshunt =      0.9999809E-10
+ dcop: gshunt =      0.9999895E-10
+ dcop: gshunt =      0.9999942E-10
+ dcop: gshunt =      0.9999968E-10
+ dcop: gshunt =      0.9999983E-10
+ dcop: gshunt =      0.9999990E-10
+ dcop: gshunt =      0.9999995E-10
+ dcop: gshunt =      0.9999997E-10
+ dcop: gshunt =      0.9999998E-10
+ dcop: gshunt =      0.9999999E-10
+ dcop: gshunt ramping failed
+ **error** no convergence in operating point
+ dcop: end dcop,  cpu clock=  1.74E+02 memory=   2539 kb  tot_iter=   16249
+>error          ***** hspice job aborted
+ Init: hspice initialization file: C:\synopsys\Hspice_Z-2007.03\hspice.ini
+ lic: Release hspice token(s)

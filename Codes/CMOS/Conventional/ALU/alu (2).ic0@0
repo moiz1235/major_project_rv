@@ -1,0 +1,12 @@
+* "simulator" "HSPICE" 
+* "version" "A-2008.03 32-BIT"
+* "format" "HSP"
+* "rundate" "16:04:32 01/30/2016 "
+* "netlist" "f:\major_project\codes\cmos\conventional\alu\alu (2).sp "
+* "runtitle" "alu"
+* time =    0.            
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
